@@ -1,0 +1,8 @@
+
+<if condition="$new">
+<ul>
+<volist name="new" id="vo" offset="0" length="6">
+<li><a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'new','e'))}>" title="<{$vo.etitle}>"><{$vo.etitle}></a></li>
+</volist>
+</ul>
+</if>

@@ -1,0 +1,201 @@
+<extend name="Public/base"/>
+<block name="css">
+
+    <if condition="$type eq 'page'"> 
+      <include file='Public:kinde'/>
+    </if>
+<SCRIPT language=javaScript>
+function CheckJob()
+{
+	if (document.myform.name.value.length==""){
+		alert ("栏目名称不能为空！");
+		document.myform.name.focus();
+		return false;
+	}
+	var number = document.getElementById('sort').value;
+	var reg = /^\d+$/;
+	if (!number.match(reg)){
+		alert ("排序号必须为数字!");
+		document.myform.sort.focus();
+		return false;
+	}
+ }
+</SCRIPT>
+
+</block>
+<block name="active">
+		<li >
+		</block>
+<block name="menuactive1">
+		<li class="submenu active open">
+		</block>
+
+<block name="menuactive2">
+	<li class="submenu">
+		</block>
+<block name="menuactive3">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive4">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive5">
+		<li class="submenu">
+		</block>
+<block name="menuactive6">
+		<li class="submenu">
+		</block>
+<block name="hometitle">网站管理</block>
+
+<block name="contents">
+
+<div class="row-fluid">
+			<div class="span12">
+			<div class="widget-box">
+							<div class="widget-title">
+
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+
+								<h5><if condition="$pid eq 0">
+        添加【<{$name}>】
+        <else/>
+        添加【<{$name}>】的子栏目
+        </if></h5><h5><a href="<{:U('List/index')}>">返回栏目列表</a></h5>
+							</div>
+							
+							<div class="widget-content nopadding" id="main">
+							<form class="form-horizontal" action="<{:U('savelist')}>" method="post" name="myform" id="myform" enctype="multipart/form-data" onSubmit="return CheckJob()">
+
+
+<DIV class="PageContent">
+<table width="90%" border="0" style="margin:20px;" class="ListCategory">
+  <tr>
+    <td width="14%">栏目名称：</td>
+    <td width="86%" height="35"><input name="name" type="text" style="width: 450px;" ><span style="color:#F00; font-size:12px;">*必填</span></td>
+  </tr>
+   <tr>
+    <td style="color:blue;">栏目名称(英文)：</td>
+    <td height="35"><input name="ename" type="text" style="width: 450px;" ><span style="color:#F00; font-size:12px;">*必填</span></td>
+  </tr>
+  <if condition="$pid eq 0 && $type !='page' && $type !='link'">
+  <tr>
+    <td>栏目模型:</td>
+    <td height="35">
+      <select name="type" style="height:32px;width: 100px;">
+          <option value="product">产品模型</option>
+          <option value="new">新闻模型</option>
+          <!--<option value="photo">图片模型</option>-->
+          <option value="download">下载模型</option>
+		  <option value="page">单页模型</option>
+      </select>
+    </td>
+  </tr>
+  <else/>
+  <input name="type" type="hidden" value="<{$type}>">
+  </if>
+  
+  <tr>
+    <td>导航菜单：</td>
+    <td height="35">
+    <select name="nav" style="height:30px;width: 80px;">
+        <option value="1">显示</option>
+        <option value="0">隐藏</option>
+    </select>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>排序ID：</td>
+    <td height="35"><input name="sort" id="sort" type="text"  style="width: 50px;"><span style="color:#F00; font-size:12px;">*必填</span></td>
+  </tr>
+  
+  <neq name="type" value="link">
+  <tr>
+    <td>URL优化：</td>
+    <td height="35"><input name="url" type="text" style="width: 450px;" > <a title='URL只能是字母、数字或-'style="margin-left: 5px;" href="#"><img src="__IMG__/help.gif"></a></td>
+  </tr>
+  <tr>
+    <td>SEO标题：</td>
+    <td height="35"><input name="title" type="text"  style="width: 450px;"></td>
+  </tr>
+  <tr>
+    <td>SEO关键字：</td>
+    <td height="35"><input name="keywords" type="text"  style="width: 450px;"></td>
+  </tr>
+  <tr>
+    <td>SEO描述：</td>
+    <td height="110"><textarea name="description"  style="width: 450px; height: 80px;"></textarea>
+    <input name="pid" type="hidden" value="<{$pid}>">
+    </td>
+  </tr>
+  <tr>
+    <td style="color:blue;">SEO标题(英文)：</td>
+    <td height="35"><input name="etitle" type="text"  style="width: 450px;"></td>
+  </tr>
+  <tr>
+    <td style="color:blue;">SEO关键字(英文)：</td>
+    <td height="35"><input name="ekeywords" type="text"  style="width: 450px;"></td>
+  </tr>
+  <tr>
+    <td style="color:blue;">SEO描述(英文)：</td>
+    <td height="110"><textarea name="edescription"  style="width: 450px; height: 80px;"></textarea>
+    <input name="pid" type="hidden" value="<{$pid}>">
+    </td>
+  </tr>
+  <else/>
+  <tr>
+    <td>链接地址：</td>
+    <td height="35"><input name="link" type="text"  style="width: 450px;">
+      <a title='(1)站内链接：如 /aaa/<br>(2)站外链接：需以http://开头'style="margin-left: 5px;" href="#"><img src="__IMG__/help.gif"></a>
+    </td>
+  </tr>
+  <tr>
+
+  <tr>
+    <td style="color:blue;">链接地址(英文)：</td>
+    <td height="35"><input name="elink" type="text"  style="width: 450px;">
+      <a title='(1)站内链接：如 /aaa/<br>(2)站外链接：需以http://开头'style="margin-left: 5px;" href="#"><img src="__IMG__/help.gif"></a>
+    </td>
+  </tr>
+  <tr>
+  </neq>
+  
+
+  
+<if condition="$type eq 'page'">  
+  <tr>
+    <td>单页内容：</td>
+    <td>
+    <textarea name="contents" style="width:670px; height:290px; margin:8px 0;visibility:hidden;"></textarea>
+    </td>
+  </tr>
+   <tr><td>&nbsp;</td><td>&nbsp;</td></tr>
+  <tr>
+    <td style="color:blue;">单页内容(英文)：</td>
+    <td>
+    <textarea name="econtents" style="width:670px; height:290px; margin:8px 0;visibility:hidden;"></textarea>
+    </td>
+  </tr>
+</if>
+
+  <tr>
+    <td height="55" align="center">
+    </td>
+    <td height="55" align="left">
+    <input type="submit" value="提交" class="btn submit-btn ajax-post" target-form="form-horizontal">&nbsp;&nbsp;
+    <input name="reset" type="reset"  class="btn submit-btn" value="重置" />
+    </td>
+    </tr>
+</table>
+</DIV>
+</form>
+
+</div>
+						</div>
+				</div>
+			</div>
+</block>

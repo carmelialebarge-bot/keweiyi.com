@@ -1,0 +1,34 @@
+<ul id="menu-main-menu" class="navi">
+<li class='menu-item menu-item-type-custom menu-item-object-custom <if condition="is_null($catid) ">current-menu-item current_page_item</if> menu-item-home '><a href="<{:W('Index/Index',array('cnen'=>'en','lang'=>'e'))}>">Home</a></li>
+<volist name='nav' id='vo' offset="0" length='8'>
+<li  class='menu-item menu-item-type-taxonomy menu-item-object-category <if condition="$vo.bid eq $catid ">current-menu-item current_page_item</if> <eq name="vo.snav" value="1">menu-item-has-children</eq>'><a href="<{:W('Listhref/Listhref',array('url'=>$vo['url'],'id'=>$vo['id'],'link'=>$vo['link'],'lang'=>'e'))}>"><{$vo.ename}></a>
+         <eq name="vo.snav" value="1">
+		<ul class="sub-menu">
+		  <volist name='snav' id='svo'>
+          <eq name="svo.pid" value="$vo.id">
+			<li  class='menu-item menu-item-type-taxonomy menu-item-object-category <eq name="svo.snav" value="1">menu-item-has-children</eq> '><a href="<{:W('Listhref/Listhref',array('url'=>$svo['url'],'id'=>$svo['id'],'link'=>$svo['link'],'lang'=>'e'))}>"><{$svo.ename}></a>
+			    <eq name="svo.snav" value="1">
+				<ul class="sub-menu">
+				    <volist name='ssnav' id='ssvo'>
+                    <eq name="ssvo.pid" value="$svo.id">	
+					<li  class="menu-item menu-item-type-taxonomy menu-item-object-category "><a href="<{:W('Listhref/Listhref',array('url'=>$ssvo['url'],'id'=>$ssvo['id'],'link'=>$ssvo['link'],'lang'=>'e'))}>"><{$ssvo.ename}></a></li>
+					</eq>
+                    </volist>
+				</ul>
+				</eq>
+		</li>
+		</eq>
+        </volist>
+		
+		
+	</ul>
+	</eq>
+</li>
+</volist>
+</ul> 
+
+
+
+
+
+

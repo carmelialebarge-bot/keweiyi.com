@@ -1,0 +1,197 @@
+<extend name="Public/base"/>
+<block name="css">
+		
+<include file='Public:kinde'/>
+
+		</block>
+
+<block name="active">
+		<li >
+		</block>
+<block name="menuactive1">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive2">
+	<li class="submenu active open">
+		</block>
+<block name="menuactive3">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive4">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive5">
+		<li class="submenu">
+		</block>
+<block name="menuactive6">
+		<li class="submenu">
+		</block>
+<block name="hometitle">内容管理</block>
+<block name="contents">
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#tab0" data-toggle="tab">中文信息</a></li>
+  <li><a href="#tab1" data-toggle="tab">英文信息</a></li>
+ </ul>
+  <div class="tab-content">
+ <div class="tab-pane active" id="tab0">
+			<div class="row-fluid">
+			<div class="span12">
+			<div class="widget-box">
+							<div class="widget-title">
+
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+
+								<h5>修改下载</h5><h5><a href="<{:U('Download/index')}>">返回下载列表</a></h5>
+							</div>
+							
+							<div class="widget-content nopadding">
+							<form class="form-horizontal" action="<{:U('updatedown')}>" method="post" name="myform" id="myform" enctype="multipart/form-data" onSubmit="return CheckJob()">
+<DIV class="PageContent">
+<table width="98%" border="0" style="margin:20px;" class="ListCategory">
+  <tr>
+    <td width="9%">下载名称：</td>
+    <td width="91%" height="35"><input name="name" type="text" value="<{$down.name}>"  style="width: 320px;"> 
+	<span style="color:#F00; font-size:12px;">*必填</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>新闻分类:</td>
+    <td height="35">
+      <select name="pid" style="height:28px;">
+      <volist name='list' id='vo'>
+          <option value="<{$vo.id}>" <eq name="vo.id" value="$down.pid">selected="selected"</eq>><{$vo.html}><if condition='$vo.level gt 0'>┕</if><{$vo.name}></option>
+      </volist>
+      </select>
+    </td>
+  </tr>
+
+  <tr>
+    <td>排序ID：</td>
+    <td height="35"><input name="sort" type="text" value="<{$down.sort}>"  style="width: 50px;"> <span style="color:#F00; font-size:12px;">*必填</span></td>
+  </tr>
+
+  <tr>
+    <td>URL优化：</td>
+    <td height="35"><input name="url" type="text" value="<{$down.url}>"  style="width: 320px;"> <a title='URL只能是字母，数字，下划线或-'style="margin-left: 5px;" href="#"><img src="__IMG__/help.gif"></a></td>
+  </tr>
+  
+  <tr>
+    <td width="9%">SEO标题：</td>
+    <td width="91%" height="35"><input name="title" type="text" value="<{$down.title}>"  style="width: 320px;"> 
+	<span style="color:#F00; font-size:12px;">*必填</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>SEO关键字：</td>
+    <td height="35"><input name="keywords" type="text" value="<{$down.keywords}>"   style="width: 320px;"></td>
+  </tr>
+  
+  <tr>
+    <td>SEO描述：</td>
+    <td height="110"><textarea name="description"  style="width: 450px; height: 80px;"><{$down.description}></textarea>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>上传文件：</td>
+    <td height="35">
+    <empty name='down.filename'>
+    <input type='file' name='filename'>
+    <input type="hidden" name="num" value="1">
+    <else/>
+      <p style="padding:4px 0;">
+     <{$down.filename}>&nbsp;&nbsp;<a href="<{:U('delfile',array('name'=>$down['filename'],'id'=>$down['id']))}>" class='confirm ajax-get'>删除该文件</a>
+      </p>
+     </empty> 
+    </td>
+  </tr>
+  
+ <!--  <tr>
+    <td>下载详细：</td>
+    <td>
+    <textarea name="contents" style="width:680px; height:320px; margin:8px 0;visibility:hidden;"><{$down.contents}></textarea>
+    </td>
+  </tr> -->
+</table>
+</DIV>
+
+ 
+ 
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+
+ <div class="tab-pane" id="tab1">
+			<div class="row-fluid">
+			<div class="span12">
+			<div class="widget-box">
+							<div class="widget-title">
+
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+
+								<h5>修改下载(英文)</h5><h5><a href="<{:U('Download/index')}>">返回下载列表</a></h5>
+							</div>
+							
+							<div class="widget-content nopadding">
+							
+<DIV class="PageContent">
+<table width="98%" border="0" style="margin:20px;" class="ListCategory">
+  <tr>
+    <td width="14%">下载名称(英文)：</td>
+    <td width="86%" height="35"><input name="ename" type="text" value="<{$down.ename}>"  style="margin-bottom:0;width: 320px;"> 
+	<span style="color:#F00; font-size:12px;">*必填</span>
+    </td>
+  </tr>
+  <tr>
+    <td width="9%">SEO标题(英文)：</td>
+    <td width="91%" height="35"><input name="etitle" type="text" value="<{$down.etitle}>"  style="margin-bottom:0;width: 320px;"> 
+	<span style="color:#F00; font-size:12px;">*必填</span>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>SEO关键字(英文)：</td>
+    <td height="35"><input name="ekeywords" type="text" value="<{$down.ekeywords}>"   style="margin-bottom:0;width: 320px;"></td>
+  </tr>
+  
+  <tr>
+    <td>SEO描述(英文)：</td>
+    <td height="110"><textarea name="edescription"  style="margin-bottom:0;width: 450px; height: 80px;"><{$down.edescription}></textarea>
+    </td>
+  </tr>
+  <!-- <tr>
+    <td>下载详细(英文)：</td>
+    <td>
+    <textarea name="econtents" style="width:680px; height:320px; margin:8px 0;visibility:hidden;"><{$down.econtents}></textarea>
+    </td>
+  </tr> -->
+</table>
+</DIV>
+
+ 
+ 
+							</div>
+						</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="float:left; margin:-10px 0px 20px 450px;">
+	 <input type="hidden" name="id" value="<{$down.id}>">
+    <button type="submit"  class="btn submit-btn ajax-post" target-form="form-horizontal">确认修改</button>
+    </div>
+    </form>	
+			
+				 </block>
+				  

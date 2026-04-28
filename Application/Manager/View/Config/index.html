@@ -1,0 +1,623 @@
+<extend name="Public/base"/>
+      
+<block name="active">
+		<li>
+		</block>
+<block name="menuactive1">
+		<li class="submenu active open">
+		</block>
+
+<block name="menuactive2">
+		<li class="submenu">
+		</block>
+<block name="menuactive3">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive4">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive5">
+		<li class="submenu">
+		</block>
+<block name="menuactive6">
+		<li class="submenu">
+		</block>
+<block name="hometitle">网站管理</block>
+<block name="contents">
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#tab0" data-toggle="tab">中文信息</a></li>
+  <li><a href="#tab1" data-toggle="tab">英文信息</a></li>
+  <li><a href="#tab2" data-toggle="tab">显示设置</a></li>
+  <!-- <li><a href="#tab3" data-toggle="tab">邮件设置</a></li> -->
+ <li><a href="#tab4" data-toggle="tab">客服设置</a></li>
+</ul>
+<form class="form-horizontal" action="<{:U('upconfig')}>" method="post" name="myform" id="myform" enctype="multipart/form-data">
+
+<div class="tab-content">
+    <div class="tab-pane active" id="tab0">
+      
+  
+    <label class="control-label">公司名称</label>
+    <div class="controls">
+      <input name="web_name" type="text" value="<{$Think.config.web_name}>">
+    </div>
+ 
+ 
+    <label class="control-label" >SEO标题</label>
+    <div class="controls">
+      <input name="seo_title" type="text" value="<{$Think.config.seo_title}>" >
+    </div>
+	 <label class="control-label" >SEO关键字</label>
+    <div class="controls">
+      <input name="seo_keywords" type="text" value="<{$Think.config.seo_keywords}>">
+    </div>
+    <label class="control-label" >SEO描述</label>
+    <div class="controls">
+      <textarea rows="3" name="seo_description"><{$Think.config.seo_description}></textarea>
+    </div>
+	<label class="control-label" >公司口号</label>
+    <div class="controls">
+     <input name="web_kouhao" type="text" value="<{$Think.config.web_kouhao}>" > 
+    </div>
+	<label class="control-label" >首页口号背景图</label>
+    <div class="controls">
+  <if condition="$Think.config.web_logo3 eq ''">
+      <input type="file" name='web_logo3' >
+     <else />
+     <img src="__ROOT__/Uploads/<{$Think.config.web_logo3}>" width="120" height="60"/>
+              <a href="__MODULE__?c=config&a=dellogo&name=<{$Think.config.web_logo3}>&type=logo3" class='confirm ajax-get'>删除该图片</a>
+            </if>
+    </div>
+  <label class="control-label" >网站顶部LOGO</label>
+    <div class="controls">
+	<if condition="$Think.config.web_logo eq ''">
+      <input type="file" name='web_logo' >
+	   <else />
+	   <img src="__ROOT__/Uploads/<{$Think.config.web_logo}>" width="120" height="60"/>
+              <a href="__MODULE__?c=config&a=dellogo&name=<{$Think.config.web_logo}>&type=logo" class='confirm ajax-get'>删除该图片</a>
+            </if>
+    </div>
+   
+    <label class="control-label" >网站悬浮LOGO</label>
+    <div class="controls">
+	<if condition="$Think.config.web_logo1 eq ''">
+      <input type="file" name='web_logo1' >
+	   <else />
+	   <img src="__ROOT__/Uploads/<{$Think.config.web_logo1}>" width="120" height="60"/>
+              <a href="__MODULE__?c=config&a=dellogo&name=<{$Think.config.web_logo1}>&type=logo1" class='confirm ajax-get'>删除该图片</a>
+            </if>
+    </div>
+     <label class="control-label" >底部口号</label>
+    <div class="controls">
+   <input name="web_kouhao1" type="text" value="<{$Think.config.web_kouhao1}>">
+     </div>
+  <label class="control-label" >底部口号背景图</label>
+    <div class="controls">
+  <if condition="$Think.config.web_logo4 eq ''">
+      <input type="file" name='web_logo4' >
+     <else />
+     <img src="__ROOT__/Uploads/<{$Think.config.web_logo4}>" width="120" height="60"/>
+              <a href="__MODULE__?c=config&a=dellogo&name=<{$Think.config.web_logo4}>&type=logo4" class='confirm ajax-get'>删除该图片</a>
+            </if>
+    </div>
+     <label class="control-label" >网站底部LOGO</label>
+    <div class="controls">
+	<if condition="$Think.config.web_logo2 eq ''">
+      <input type="file" name='web_logo2' >
+	   <else />
+	   <img src="__ROOT__/Uploads/<{$Think.config.web_logo2}>" width="120" height="60"/>
+              <a href="__MODULE__?c=config&a=dellogo&name=<{$Think.config.web_logo2}>&type=logo2" class='confirm ajax-get'>删除该图片</a>
+            </if>
+    </div>
+
+	<label class="control-label" >企业服务标题</label>
+    <div class="controls">
+      <input type="text" name="web_servicet" value="<{$Think.config.web_servicet}>" >
+    </div>
+	 <label class="control-label" >企业服务内容</label>
+    <div class="controls">
+      <textarea rows="3" name="web_service"><{$Think.config.web_service}></textarea>
+    </div>
+		<label class="control-label" >企业技术标题</label>
+    <div class="controls">
+      <input type="text" name="web_techt" value="<{$Think.config.web_techt}>" >
+    </div>
+	 <label class="control-label" >企业技术内容</label>
+    <div class="controls">
+      <textarea rows="3" name="web_tech"><{$Think.config.web_tech}></textarea>
+    </div>
+	<label class="control-label" >企业技术链接</label>
+    <div class="controls">
+      <input type="text" name="web_techurl" value="<{$Think.config.web_techurl}>" >
+    </div>
+		<label class="control-label" >企业设备标题</label>
+    <div class="controls">
+      <input type="text" name="web_equipmentt" value="<{$Think.config.web_equipmentt}>" >
+    </div>
+	 <label class="control-label" >企业设备内容</label>
+    <div class="controls">
+      <textarea rows="3" name="web_equipment"><{$Think.config.web_equipment}></textarea>
+    </div>
+	<label class="control-label" >企业设备链接</label>
+    <div class="controls">
+      <input type="text" name="web_equipmenturl" value="<{$Think.config.web_equipmenturl}>" >
+    </div>
+			<label class="control-label" >企业荣誉标题</label>
+    <div class="controls">
+      <input type="text" name="web_honort" value="<{$Think.config.web_honort}>" >
+    </div>
+	 <label class="control-label" >企业荣誉内容</label>
+    <div class="controls">
+      <textarea rows="3" name="web_honor"><{$Think.config.web_honor}></textarea>
+    </div>
+	<label class="control-label" >企业荣誉链接</label>
+    <div class="controls">
+      <input type="text" name="web_honorurl" value="<{$Think.config.web_honorurl}>" >
+    </div>
+	<label class="control-label" >选择我们的理由1</label>
+    <div class="controls">
+      <textarea rows="3" name="web_choose1"><{$Think.config.web_choose1}></textarea>
+    </div>
+	<label class="control-label" >选择我们的理由2</label>
+    <div class="controls">
+      <textarea rows="3" name="web_choose2"><{$Think.config.web_choose2}></textarea>
+    </div>
+	<label class="control-label" >选择我们的理由3</label>
+    <div class="controls">
+      <textarea rows="3" name="web_choose3"><{$Think.config.web_choose3}></textarea>
+    </div>
+	<label class="control-label" >网站域名</label>
+    <div class="controls">
+      <input type="text" name="web_url" value="<{$Think.config.web_url}>" >
+    </div>
+	<label class="control-label" >联系人</label>
+    <div class="controls">
+      <input type="text" name="web_contacts" value="<{$Think.config.web_contacts}>" >
+    </div>
+	<label class="control-label" >公司邮箱</label>
+    <div class="controls">
+      <input type="text" name="web_email" value="<{$Think.config.web_email}>">
+    </div>
+	<label class="control-label" >公司SKYPE</label>
+    <div class="controls">
+      <input type="text" name="web_skype" value="<{$Think.config.web_skype}>">
+    </div>
+    <label class="control-label" >Facebook链接</label>
+    <div class="controls">
+      <input type="text" name="web_facebook" value="<{$Think.config.web_facebook}>">
+    </div>
+         <label class="control-label" >Linkedin链接</label>
+    <div class="controls">
+      <input type="text" name="web_linkedin" value="<{$Think.config.web_linkedin}>">
+    </div>
+         <label class="control-label" >Twitter链接</label>
+    <div class="controls">
+      <input type="text" name="web_twitter" value="<{$Think.config.web_twitter}>">
+    </div>
+         <label class="control-label" >Pinterest链接</label>
+    <div class="controls">
+      <input type="text" name="web_pinterest" value="<{$Think.config.web_pinterest}>">
+    </div>
+         <label class="control-label" >Instagram链接</label>
+    <div class="controls">
+      <input type="text" name="web_instagram" value="<{$Think.config.web_instagram}>">
+    </div>
+    <label class="control-label" >工作时间</label>
+    <div class="controls">
+      <input type="text" name="web_time" value="<{$Think.config.web_time}>" >
+    </div>
+	<label class="control-label" >联系电话</label>
+    <div class="controls">
+      <input type="text" name="web_tel" value="<{$Think.config.web_tel}>" >
+    </div>
+	<label class="control-label" >联系手机</label>
+    <div class="controls">
+      <input type="text" name="web_phone" value="<{$Think.config.web_phone}>" >
+    </div>
+	<label class="control-label" >公司传真</label>
+    <div class="controls">
+      <input type="text" name="web_fax" value="<{$Think.config.web_fax}>" >
+    </div>
+	<label class="control-label" >联系地址</label>
+    <div class="controls">
+      <input type="text" name="web_add" value="<{$Think.config.web_add}>" >
+    </div>
+	<label class="control-label" >备案号</label>
+    <div class="controls">
+      <input type="text" name="web_icp" value="<{$Think.config.web_icp}>" >
+    </div>
+	<label class="control-label" >统计代码</label>
+    <div class="controls">
+       <textarea rows="3" name="web_count"><{$Think.config.web_count}></textarea>
+    </div>
+	<label class="control-label" >分享代码</label>
+    <div class="controls">
+       <textarea rows="3" name="web_share" ><{$Think.config.web_share}></textarea>
+    </div>
+	<label class="control-label" >版权信息</label>
+    <div class="controls">
+       <textarea rows="3" name="web_copyright" ><{$Think.config.web_copyright}></textarea>
+    </div>
+
+    </div>
+
+	<div class="tab-pane" id="tab1">
+      
+  
+    <label class="control-label">公司名称(英文)</label>
+    <div class="controls">
+      <input name="web_ename" type="text" value="<{$Think.config.web_ename}>">
+    </div>
+ 
+ 
+    <label class="control-label" >SEO标题(英文)</label>
+    <div class="controls">
+      <input name="seo_etitle" type="text" value="<{$Think.config.seo_etitle}>" >
+    </div>
+	 <label class="control-label" >SEO关键字(英文)</label>
+    <div class="controls">
+      <input name="seo_ekeywords" type="text" value="<{$Think.config.seo_ekeywords}>">
+    </div>
+    <label class="control-label" >SEO描述(英文)</label>
+    <div class="controls">
+      <textarea rows="3" name="seo_edescription"><{$Think.config.seo_edescription}></textarea>
+    </div>
+	<label class="control-label" >公司口号(英文)</label>
+    <div class="controls">
+	<textarea rows="3" name="web_ekouhao" ><{$Think.config.web_ekouhao}></textarea>
+      
+    </div>
+    <label class="control-label" >底部口号</label>
+    <div class="controls">
+   <input name="web_ekouhao1" type="text" value="<{$Think.config.web_ekouhao1}>">
+     </div>
+	 	<label class="control-label" >企业服务标题(英文)</label>
+    <div class="controls">
+      <input type="text" name="web_eservicet" value="<{$Think.config.web_eservicet}>" >
+    </div>
+	 <label class="control-label" >企业服务内容(英文)</label>
+    <div class="controls">
+      <textarea rows="3" name="web_eservice"><{$Think.config.web_eservice}></textarea>
+    </div>
+		<label class="control-label" >企业技术标题(英文)</label>
+    <div class="controls">
+      <input type="text" name="web_etecht" value="<{$Think.config.web_etecht}>" >
+    </div>
+	 <label class="control-label" >企业技术内容(英文)</label>
+    <div class="controls">
+      <textarea rows="3" name="web_etech"><{$Think.config.web_etech}></textarea>
+    </div>
+	<label class="control-label" >企业技术链接(英文)</label>
+    <div class="controls">
+      <input type="text" name="web_etechurl" value="<{$Think.config.web_etechurl}>" >
+    </div>
+		<label class="control-label" >企业设备标题(英文)</label>
+    <div class="controls">
+      <input type="text" name="web_eequipmentt" value="<{$Think.config.web_eequipmentt}>" >
+    </div>
+	 <label class="control-label" >企业设备内容(英文)</label>
+    <div class="controls">
+      <textarea rows="3" name="web_eequipment"><{$Think.config.web_eequipment}></textarea>
+    </div>
+	<label class="control-label" >企业设备链接(英文)</label>
+    <div class="controls">
+      <input type="text" name="web_eequipmenturl" value="<{$Think.config.web_eequipmenturl}>" >
+    </div>
+			<label class="control-label" >企业荣誉标题(英文)</label>
+    <div class="controls">
+      <input type="text" name="web_ehonort" value="<{$Think.config.web_ehonort}>" >
+    </div>
+	 <label class="control-label" >企业荣誉内容(英文)</label>
+    <div class="controls">
+      <textarea rows="3" name="web_ehonor"><{$Think.config.web_ehonor}></textarea>
+    </div>
+	<label class="control-label" >企业荣誉链接(英文)</label>
+    <div class="controls">
+      <input type="text" name="web_ehonorurl" value="<{$Think.config.web_ehonorurl}>" >
+    </div>
+	<label class="control-label" >选择理由1(英文)</label>
+    <div class="controls">
+      <textarea rows="3" name="web_echoose1"><{$Think.config.web_echoose1}></textarea>
+    </div>
+	<label class="control-label" >选择理由2(英文)</label>
+    <div class="controls">
+      <textarea rows="3" name="web_echoose2"><{$Think.config.web_echoose2}></textarea>
+    </div>
+	<label class="control-label" >选择理由3(英文)</label>
+    <div class="controls">
+      <textarea rows="3" name="web_echoose3"><{$Think.config.web_echoose3}></textarea>
+    </div>
+    <label class="control-label" >工作时间(英文)</label>
+    <div class="controls">
+      <input type="text" name="web_etime" value="<{$Think.config.web_etime}>" >
+    </div>
+	<label class="control-label" >联系人(英文)</label>
+    <div class="controls">
+      <input type="text" name="web_econtacts" value="<{$Think.config.web_econtacts}>" >
+    </div>
+	<label class="control-label" >联系地址(英文)</label>
+    <div class="controls">
+      <input type="text" name="web_eadd" value="<{$Think.config.web_eadd}>" >
+    </div>
+	<label class="control-label" >分享代码(英)</label>
+    <div class="controls">
+       <textarea rows="3" name="web_eshare" ><{$Think.config.web_eshare}></textarea>
+    </div>
+	<label class="control-label" >版权信息(英文)</label>
+    <div class="controls">
+       <textarea rows="3" name="web_ecopyright" ><{$Think.config.web_ecopyright}></textarea>
+    </div>
+
+    </div>
+
+    <div class="tab-pane" id="tab2">
+	<div class="row-fluid">
+	<div class="span6">
+	<label class="control-label">默认首页设置</label>
+			<div class="controls">
+												
+			<label class="radio inline"><input type="radio" name="cnen" value="cn" <if condition="$Think.config.cnen eq 'cn'">checked="checked"</if>/> 中文</label>
+			<label class="radio inline"><input type="radio" name="cnen" value="en" <if condition="$Think.config.cnen eq 'en'">checked="checked"</if> /> 英文</label>
+		</div>
+		  <label class="control-label">首页产品显示数量</label>
+		<div class="controls">
+		  <div class="input-append">
+		  <input  id="appendedInput" name="index_num" type="text" value="<{$Think.config.index_num}>" >
+		  <span class="add-on">个 / 页</span>
+		</div>
+		</div>
+	</div>
+	</div>
+	<!--<div class="row-fluid">
+	<div class="span6">
+		<label class="control-label">首页TAGS标签数量</label>
+		<div class="controls">
+		  <div class="input-append">
+		  <input name="index_tags"  id="appendedInput" type="text" value="<{$Think.config.index_tags}>" >
+		  <span class="add-on">个 / 页</span>
+		</div>
+		</div>
+	</div>
+	</div>-->
+	<div class="row-fluid">
+	<div class="span6">
+		<label class="control-label">列表页产品数量</label>
+		<div class="controls">
+		<div class="input-append">
+		  <input name="list_pronum" id="appendedInput" type="text" value="<{$Think.config.list_pronum}>" >
+		  <span class="add-on">个 / 页</span>
+		</div>
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span6">
+		<label class="control-label">列表页新闻数量</label>
+		<div class="controls">
+		  <div class="input-append">
+		  <input name="list_newnum" id="appendedInput" type="text" value="<{$Think.config.list_newnum}>" >
+		  <span class="add-on">条 / 页</span>
+		</div>
+		</div>
+	</div>
+	</div>
+	<!--<div class="row-fluid">
+	<div class="span6">
+		<label class="control-label">列表页图片数量</label>
+		<div class="controls">
+		  <div class="input-append">
+		  <input name="list_photonum" id="appendedInput" type="text" value="<{$Think.config.list_photonum}>" >
+		  <span class="add-on">个 / 页</span>
+		</div>
+		</div>
+	</div>
+	</div>-->
+	<div class="row-fluid">
+	<div class="span6">
+		<label class="control-label">列表页下载数量</label>
+		<div class="controls">
+		  <div class="input-append">
+		  <input name="list_downnum" id="appendedInput" type="text" value="<{$Think.config.list_downnum}>" >
+		  <span class="add-on">个 / 页</span>
+		</div>
+		</div>
+	</div>
+	</div>
+		<!--<label class="control-label">是否开启谷歌翻译</label>
+			<div class="controls">
+												
+			<label class="radio inline"><input type="radio" name="is_translate" value="1" <if condition='$Think.config.is_translate eq 1'>checked="checked"</if>/> 开启</label>
+			<label class="radio inline"><input type="radio" name="is_translate" value="0" <if condition='$Think.config.is_translate eq 0'>checked="checked"</if> /> 关闭</label>
+		</div>-->
+										
+						
+	
+    </div>
+	<div class="tab-pane" id="tab3">
+		<label class="control-label">是否开启邮件通知</label>
+				<div class="controls">
+													
+				<label class="radio inline"><input type="radio" name="is_email" value="1" <if condition='$Think.config.is_email eq 1'>checked="checked"</if> /> 开启</label>
+				<label class="radio inline"><input type="radio" name="is_email" value="0" <if condition='$Think.config.is_email eq 0'>checked="checked"</if> /> 关闭</label>
+			</div>
+	
+     <div class="row-fluid">
+	<div class="span6">
+		  <label class="control-label">服务器端口</label>
+		<div class="controls">
+		  <input  type="text" name="email_port" value="<{$Think.config.email_port}>" >
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span6">
+		<label class="control-label">邮箱服务器地址</label>
+		<div class="controls">
+		  <input type="text" name="email_host" value="<{$Think.config.email_host}>">
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span6">
+		<label class="control-label">邮箱账号</label>
+		<div class="controls">
+		  <input type="text" name="email_username" value="<{$Think.config.email_username}>" >
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span6">
+		<label class="control-label">邮箱密码</label>
+		<div class="controls">
+		  <input type="password" name="email_password" value="<{$Think.config.email_password}>" >
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span6">
+		<label class="control-label">发送人名称</label>
+		<div class="controls">
+		  <input type="text" name="email_fromName" value="<{$Think.config.email_fromName}>" >
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span6">
+		<label class="control-label">接收通知的邮箱</label>
+		<div class="controls">
+		  <input type="text" name="email_to" value="<{$Think.config.email_to}>" >
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span6">
+		<label class="control-label">发送方式</label>
+		<div class="controls">
+		  <select name="send_way" class="span4">
+              <option value="1" <eq name="Think.config.send_way" value="1">selected="selected"</eq>>smtp</option>
+              <option value="2" <eq name="Think.config.send_way" value="2">selected="selected"</eq>>mail</option>
+              <option value="3" <eq name="Think.config.send_way" value="3">selected="selected"</eq>>phpmailer</option>
+            </select>
+		</div>
+	</div>
+	</div>
+    </div>
+	<div class="tab-pane" id="tab4">
+     	<label class="control-label">是否开启在线客服</label>
+			<div class="controls">
+												
+			<label class="radio inline"><input name="is_online" type="radio" value="1" <if condition='$Think.config.is_online eq 1'>checked="checked"</if> /> 开启</label>
+			<label class="radio inline"><input name="is_online" type="radio" value="0" <if condition='$Think.config.is_online eq 0'>checked="checked"</if> /> 关闭</label>
+		</div>
+   <div class="row-fluid">
+  <div class="span8">
+      <label class="control-label">Whatsapp号码</label>
+    <div class="controls">
+      <input  type="text" name="whatsapp_account" value="<{$Think.config.whatsapp_account}>" >
+    </div>
+  </div>
+  </div>
+  <div class="row-fluid">
+  <div class="span8">
+    <label class="control-label">Whatsapp显示名称</label>
+    <div class="controls">
+      <input type="text" name="whatsapp_name" value="<{$Think.config.whatsapp_name}>" >
+    </div>
+  </div>
+  </div>  
+	<div class="row-fluid">
+	<div class="span8">
+		<label class="control-label">Skype帐号</label>
+		<div class="controls">
+		  <input type="text" name="skype_account" value="<{$Think.config.skype_account}>" >
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span8">
+		<label class="control-label">Skype显示名称</label>
+		<div class="controls">
+		  <input type="text" name="skype_name" value="<{$Think.config.skype_name}>" >
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span8">
+		<label class="control-label">QQ号码</label>
+		<div class="controls">
+		  <input type="text" name="qq_account" value="<{$Think.config.qq_account}>" >
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span8">
+		<label class="control-label">QQ显示名称</label>
+		<div class="controls">
+		  <input type="text" name="qq_name" value="<{$Think.config.qq_name}>" >
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span8">
+		<label class="control-label">淘宝旺旺账号</label>
+		<div class="controls">
+		  <input type="text" name="taobao_account" value="<{$Think.config.taobao_account}>" >
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span8">
+		<label class="control-label">阿里巴巴(国内版)</label>
+		<div class="controls">
+		  <input type="text" name="1688_account" value="<{$Think.config.1688_account}>" >
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span8">
+		<label class="control-label">阿里巴巴(国际版)账号</label>
+		<div class="controls">
+		  <input type="text" name="alibaba_account" value="<{$Think.config.alibaba_account}>" >
+		</div>
+	</div>
+	</div>
+	<div class="row-fluid">
+	<div class="span8">
+		<label class="control-label">阿里巴巴(国际版)名称</label>
+		<div class="controls">
+		  <input type="text" name="alibaba_name" value="<{$Think.config.alibaba_name}>"  >
+		</div>
+	</div>
+	</div>
+    <div class="row-fluid">
+	<div class="span8">
+		 <label class="control-label" >二维图片</label>
+    <div class="controls">
+	<if condition="$Think.config.web_qrcode eq ''">
+      <input type="file" name='web_qrcode' >
+	   <else />
+	   <img src="__ROOT__/Uploads/<{$Think.config.web_qrcode}>" width="120" height="60"/>
+              <a href="__MODULE__?c=config&a=dellogo&name=<{$Think.config.web_qrcode}>&type=qrcode" class='confirm ajax-get'>删除该图片</a>
+            </if>
+    </div>
+	</div>
+    </div>
+    </div>
+  </div>
+  <TABLE width="100%" height="30" style="margin-top: 10px;" border="0" 
+cellspacing="0" cellpadding="0">
+  <TBODY>
+  <TR>
+    <TD align="center">
+	   <button class="btn btn-large btn-primary ajax-post" target-form="form-horizontal" type="submit" >确定提交</botton>
+    </TD></TR></TBODY></TABLE>
+</form>
+
+  </block>
+  <block name="js">
+  <script src="__JS__/jquery.uniform.js"></script>
+ </block>
+   
+				  

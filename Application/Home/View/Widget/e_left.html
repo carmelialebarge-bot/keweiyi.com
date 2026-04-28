@@ -1,0 +1,16 @@
+<ul class="sub-menu">
+    <volist name='bigclass' id='vo'>    
+	<li  class="menu-item menu-item-type-post_type menu-item-object-page <if condition="$vo.id eq $id ">current-menu-item current_page_item</if>  "><a href="<{:W('Listhref/Listhref',array('url'=>$vo['url'],'id'=>$vo['id'],'link'=>$vo['link'],'e'))}>"><{$vo.ename|mb_substr=###,0,32,'utf-8'}></a>
+         <eq name="vo.snav" value="1">
+	<ul class="sub-menu">
+          <volist name='smallclass' id='svo'>
+	   <eq name="svo.pid" value="$vo.id">
+		<li  class="menu-item menu-item-type-post_type menu-item-object-page <if condition="$svo.id eq $id ">current-menu-item current_page_item</if> "><a href="<{:W('Listhref/Listhref',array('url'=>$svo['url'],'id'=>$svo['id'],'link'=>$svo['link'],'e'))}>"><{$svo.ename}></a></li>
+            </eq>
+	    </volist>
+		
+	</ul>
+          </eq>
+        </li>
+    </volist>  	
+</ul>

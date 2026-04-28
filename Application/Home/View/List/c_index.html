@@ -1,0 +1,33 @@
+<extend name="Public/c_base"/>
+<block name="seoinfo">
+<title><{$list.title}></title>
+<meta name="keywords" content="<{$list.keywords}>" />
+<meta name="description" content="<{$list.description}>" />
+</block>
+
+<block name="contents">
+<div class="page-heading style-2">
+    <div class="container">
+        <h1><{$list.name}></h1>
+        <ul class="breadcrumbs">
+            <{:W('Bread/Bread',array($id,'c'))}>
+        </ul>
+    </div>
+</div>
+
+<section class="container kwy-list-page">
+    <div class="kwy-article-list">
+        <volist name="article" id="vo">
+        <article class="kwy-article-card">
+            <div class="kwy-article-card__meta">NEWS / <{$vo.time|date="Y.m.d",###}></div>
+            <h2><a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'c'))}>"><{$vo.title}></a></h2>
+            <p><{$vo.contents|htmlspecialchars_decode|strip_tags|mb_substr=###,0,240,'utf-8'}>...</p>
+            <a class="kwy-text-link" href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'c'))}>">阅读全文</a>
+        </article>
+        </volist>
+    </div>
+    <div class="wpagenavi">
+        <{$page}>
+    </div>
+</section>
+</block>

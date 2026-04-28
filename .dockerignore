@@ -1,0 +1,7 @@
+Application/Runtime/Cache/
+Application/Runtime/Logs/
+Application/Runtime/Temp/
+Uploads/media/
+.git/
+.deploy/
+docker/mysql/backups/

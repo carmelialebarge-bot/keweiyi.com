@@ -1,0 +1,57 @@
+<extend name="Public/c_base"/>
+<block name="seoinfo">
+<title><{$list.title}></title>
+<meta name="keywords" content="<{$list.keywords}>" />
+<meta name="description" content="<{$list.description}>" />
+</block>
+
+<block name="contents">
+<div class="page-heading style-2">
+    <div class="container">
+        <h1><{$list.name}></h1>
+        <ul class="breadcrumbs">
+            <{:W('Bread/Bread',array($id,'c'))}>
+        </ul>
+    </div>
+</div>
+
+<section class="container kwy-catalog-page">
+    <div class="row">
+        <aside class="sidebar col-md-3">
+            <ul>
+                <li id="nav_menu-2" class="widget-container widget_nav_menu">
+                    <h3 class="widget-title">产品分类</h3>
+                    <div class="menu-left-our-service-bar-container">
+                        <ul id="menu-left-our-service-bar" class="menu">
+                            <li id="menu-item-1004" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-9 current_page_item menu-item-has-children menu-item-1004">
+                                <a href="<{:W('Listhref/Listhref',array('',$catid,'','c'))}>">全部产品</a>
+                                <{:W('Left/Left',array('id'=>$catid,'type'=>'product','c_left'))}>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="col-md-9">
+            <div class="kwy-catalog-grid">
+                <volist name="article" id="vo">
+                <article class="kwy-catalog-card">
+                    <a class="kwy-catalog-card__image" href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'c'))}>">
+                        <img src="__ROOT__/Uploads/<{$vo.thumb}>" alt="<{$vo.name}>">
+                    </a>
+                    <div class="kwy-catalog-card__content">
+                        <h2><a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'c'))}>"><{$vo.name}></a></h2>
+                        <p><{$vo.description|mb_substr=###,0,150,'utf-8'}>...</p>
+                        <a class="kwy-text-link" href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'c'))}>">查看详情</a>
+                    </div>
+                </article>
+                </volist>
+            </div>
+            <div class="wpagenavi">
+                <{$page}>
+            </div>
+        </div>
+    </div>
+</section>
+</block>

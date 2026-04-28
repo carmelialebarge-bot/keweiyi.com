@@ -1,0 +1,33 @@
+<extend name="Public/e_base"/>
+<block name="seoinfo">
+<title><{$list.etitle}></title>
+<meta name="keywords" content="<{$list.ekeywords}>" />
+<meta name="description" content="<{$list.edescription}>" />
+</block>
+
+<block name="contents">
+<div class="page-heading style-2">
+    <div class="container">
+        <h1><{$list.ename}></h1>
+        <ul class="breadcrumbs">
+            <{:W('Bread/Bread',array($id,'e'))}>
+        </ul>
+    </div>
+</div>
+
+<section class="container kwy-list-page">
+    <div class="kwy-article-list">
+        <volist name="article" id="vo">
+        <article class="kwy-article-card">
+            <div class="kwy-article-card__meta">NEWS / <{$vo.time|date="Y.m.d",###}></div>
+            <h2><a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'e'))}>"><{$vo.etitle}></a></h2>
+            <p><{$vo.econtents|htmlspecialchars_decode|strip_tags|mb_substr=###,0,240,'utf-8'}>...</p>
+            <a class="kwy-text-link" href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>$table,'e'))}>">Read More</a>
+        </article>
+        </volist>
+    </div>
+    <div class="wpagenavi">
+        <{$page}>
+    </div>
+</section>
+</block>

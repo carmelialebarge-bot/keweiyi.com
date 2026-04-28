@@ -1,0 +1,25 @@
+#cleft_box{ position:fixed;_position:absolute;right:0px;top:200px;padding:0px;margin:0px;overflow:hidden;width:25px; z-index:99; }
+
+.chatdiv{padding-left:25px;background:url(../images/chatbtn.gif) left 26px no-repeat;}
+
+.chatinfo{width:76px; padding:40px 10px 10px 10px; line-height:180%; background:url(../images/livechat.jpg) top center no-repeat #FFF; min-height:200px;border:2px solid #707070;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;}
+.chatinfo li {list-style: none; text-align: left;}
+.chatinfo h3{padding: 0; margin: 0; font-size: 13px; color: #000; text-align: left;}
+.chatinfo li a{
+text-decoration: none;
+display: block;
+width:90px;
+color: #333;
+overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.chatinfo li a:hover{}
+.chatinfo hr{
+height: 1px;
+overflow: hidden;
+border: 0px;
+margin: 8px 0 10px;
+border-bottom: 1px solid #201f1f;
+}
+#footer .chatinfo li a{color: #333;}

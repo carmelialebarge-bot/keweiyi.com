@@ -1,0 +1,21 @@
+<div class="kwy-arrival-grid">
+<volist name='product1' id='vo' offset="0" length="6">
+    <article class="kwy-arrival-card">
+        <a class="kwy-arrival-card__media" href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','c'))}>" title="<{$vo.name}>">
+            <img src="__ROOT__/Uploads/<{$vo.thumb}>" alt="<{$vo.name}>" loading="lazy">
+            <span class="kwy-arrival-card__badge">&#26032;&#36164;&#26009;</span>
+        </a>
+        <div class="kwy-arrival-card__body">
+            <div class="kwy-arrival-card__meta">
+                <span>Product Resource</span>
+                <i>0<{$i}></i>
+            </div>
+            <h3>
+                <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','c'))}>" title="<{$vo.name}>"><{$vo.name}></a>
+            </h3>
+            <p><{$vo.description|mb_substr=###,0,86,'utf-8'}>...</p>
+            <a class="kwy-arrival-card__link" href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','c'))}>">&#26597;&#30475;&#36164;&#26009;</a>
+        </div>
+    </article>
+</volist>
+</div>

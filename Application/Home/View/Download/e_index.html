@@ -1,0 +1,39 @@
+<extend name="Public/e_base"/>
+<block name="seoinfo">
+<title><{$article.etitle}></title>
+<meta name="keywords" content="<{$article.ekeywords}>" />
+<meta name="description" content="<{$article.edescription}>" />
+</block>
+<block name="contents">
+		<div id="content">
+	<div class="container" style="padding: 10px 0 0 0">	
+	<div class="one-fourth sidebar right">
+	<{:W('Left/Left',array('id'=>1,'type'=>'product','e'))}>
+	</div>
+<div class="three-fourth">
+	<div>
+		
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+	<{:W('Bread/Bread',array($articlelist['id'],'e'))}></div>
+<!-- /Breadcrumb -->		
+
+<div class="span12" style="margin-left: 0;">
+<h1><{$article.ename}></h1>
+<p class="download_btn"><a href="<{:U('Common/down',array('name'=>$article['filename']))}>" title="<{$article.ename}>" target="_blank"><img src="__IMG__/eDownload_btn.jpg" alt="<{$article.ename}>"/></a></p> 
+		<{$article.econtents|htmlspecialchars_decode}>
+	</div>
+	
+		</div>
+</div>
+</div>
+</div>		
+<include file="Public/e_foot" />
+	</div>
+	<!-- main wrapp starts-->
+</div>
+</block>
+<!-- main container ends-->
+
+</body>
+</html>

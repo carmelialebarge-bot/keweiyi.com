@@ -1,0 +1,16 @@
+Application/Runtime/*
+!Application/Runtime/.gitkeep
+
+.deploy/
+.env
+config/db.php
+db.php
+
+*.sql
+!docker/mysql/init/*.sql
+docker/mysql/backups/
+
+.DS_Store
+Thumbs.db
+__pycache__/
+*.pyc

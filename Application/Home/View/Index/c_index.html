@@ -1,0 +1,239 @@
+<extend name="Public/c_base"/>
+<block name="seoinfo">
+<title><{$Think.config.seo_title}></title>
+<meta name="keywords" content="<{$Think.config.seo_keywords}>" />
+<meta name="description" content="<{$Think.config.seo_description}>" />
+</block>
+
+<block name="contents">
+<main class="kwy-home">
+    <section class="kwy-hero" style="--hero-image: url('__ROOT__/Uploads/<{$Think.config.web_logo3}>');">
+        <div class="container">
+            <div class="kwy-hero__content">
+                <span class="kwy-eyebrow">Precision Machinery / Medical Trolley / Polyurea Coating</span>
+                <h1>医疗推车、配件与加工服务</h1>
+                <p><{$Think.config.web_kouhao}></p>
+                <div class="kwy-hero__actions">
+                    <a class="kwy-btn kwy-btn--primary" href="<{:W('Listhref/Listhref',array('',1,'','c'))}>">查看产品矩阵</a>
+                    <a class="kwy-btn kwy-btn--ghost" href="<{:W('Listhref/Listhref',array('',0,'/Inquiry/','lang'=>'c'))}>">提交项目需求</a>
+                </div>
+                <div class="kwy-hero__metrics">
+                    <div><strong>Medical</strong><span>医疗推车及配件</span></div>
+                    <div><strong>Machining</strong><span>精密加工与模具</span></div>
+                    <div><strong>Coating</strong><span>聚脲防腐防水</span></div>
+                    <div><strong>Support</strong><span>资料与工程配套</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="kwy-industrial-bar">
+        <div class="container">
+            <div class="kwy-industrial-bar__grid">
+                <span>方案沟通</span>
+                <span>样件验证</span>
+                <span>批量加工</span>
+                <span>材料配套</span>
+                <span>交付服务</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="kwy-section kwy-section--product-story kwy-product-story kwy-product-story--standard">
+        <div class="container">
+            <div class="kwy-product-story__panel">
+                <div class="kwy-product-story__visual" aria-hidden="true">
+                    <div class="kwy-standard-gallery">
+                        <img src="__ROOT__/Uploads/site/medical-trolley-grid.png" alt="">
+                    </div>
+                </div>
+                <div class="kwy-product-story__content">
+                    <span class="kwy-kicker">Product Group 01</span>
+                    <h2>标品及配件</h2>
+                    <p>面向医疗推车、医疗设备配套和智能设备客户，整理常用标准件、结构件与安装配件，帮助客户快速完成选型、替换和批量配套。</p>
+                    <div class="kwy-product-story__chips">
+                        <span>医疗推车结构件</span>
+                        <span>常用安装配件</span>
+                        <span>批量配套交付</span>
+                    </div>
+                    <a class="kwy-product-story__link" href="<{:W('Listhref/Listhref',array('url'=>'standard-products-accessories','id'=>91,'link'=>'','lang'=>'c'))}>">查看标品及配件</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="kwy-section kwy-section--product-story kwy-product-story kwy-product-story--moulds">
+        <div class="container">
+            <div class="kwy-product-story__panel">
+                <div class="kwy-product-story__visual" aria-hidden="true">
+                    <div class="kwy-mould-gallery">
+                        <figure>
+                            <span class="kwy-mould-gallery__media">
+                                <img src="__ROOT__/Uploads/site/mould-metal-product-square.jpg" alt="">
+                            </span>
+                            <figcaption>金属模具</figcaption>
+                        </figure>
+                        <figure>
+                            <span class="kwy-mould-gallery__media">
+                                <img src="__ROOT__/Uploads/site/abs-injection-product-square.jpg" alt="">
+                            </span>
+                            <figcaption>ABS注塑件</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                <div class="kwy-product-story__content">
+                    <span class="kwy-kicker">Product Group 02</span>
+                    <h2>模具及注塑</h2>
+                    <p>围绕设备外壳、ABS塑料件和定制结构件需求，提供从方案沟通、样件验证、模具开发到注塑成型和精密加工的协同服务。</p>
+                    <div class="kwy-product-story__chips">
+                        <span>金属与ABS模具</span>
+                        <span>注塑成型</span>
+                        <span>机加工与打样</span>
+                    </div>
+                    <a class="kwy-product-story__link" href="<{:W('Listhref/Listhref',array('url'=>'moulds-injection','id'=>92,'link'=>'','lang'=>'c'))}>">查看模具及注塑</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="kwy-section kwy-section--product-story kwy-product-story kwy-product-story--materials">
+        <div class="container">
+            <div class="kwy-product-story__panel">
+                <div class="kwy-product-story__visual" aria-hidden="true">
+                    <div class="kwy-material-board">
+                        <span class="kwy-material-board__sample kwy-material-board__sample--polyurea">
+                            <img src="__ROOT__/Uploads/site/material-spray-application.jpg" alt="">
+                        </span>
+                        <span class="kwy-material-board__sample kwy-material-board__sample--primer">
+                            <img src="__ROOT__/Uploads/site/material-floor-coating.jpg" alt="">
+                        </span>
+                        <span class="kwy-material-board__sample kwy-material-board__sample--waterborne">
+                            <img src="__ROOT__/Uploads/site/material-pipeline-protection.jpg" alt="">
+                        </span>
+                        <span class="kwy-material-board__layer"></span>
+                    </div>
+                </div>
+                <div class="kwy-product-story__content">
+                    <span class="kwy-kicker">Product Group 03</span>
+                    <h2>材料产品</h2>
+                    <p>聚焦聚脲防腐防水、防护耐磨、地坪与装饰涂料应用，按材料系列和工程场景整理资料，便于项目评估、施工配套和后续维护。</p>
+                    <div class="kwy-product-story__chips">
+                        <span>聚脲防腐防水</span>
+                        <span>底涂与水性涂料</span>
+                        <span>工程应用资料</span>
+                    </div>
+                    <a class="kwy-product-story__link" href="<{:W('Listhref/Listhref',array('url'=>'material-products','id'=>93,'link'=>'','lang'=>'c'))}>">查看材料产品</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="kwy-section kwy-section--capabilities">
+        <div class="container">
+            <div class="kwy-section__top">
+                <div>
+                    <span class="kwy-kicker">Core Solutions</span>
+                    <h2>面向客户的三大核心板块</h2>
+                </div>
+                <a class="kwy-text-link" href="<{:W('Listhref/Listhref',array('',1,'','c'))}>">浏览全部产品</a>
+            </div>
+            <div class="kwy-capability-grid">
+                <a class="kwy-capability-card" href="<{$Think.config.web_honorurl}>">
+                    <i class="fa fa-medkit"></i>
+                    <span>01</span>
+                    <h3><{$Think.config.web_honort}></h3>
+                    <p><{$Think.config.web_honor}></p>
+                </a>
+                <a class="kwy-capability-card" href="<{$Think.config.web_techurl}>">
+                    <i class="fa fa-cogs"></i>
+                    <span>02</span>
+                    <h3><{$Think.config.web_techt}></h3>
+                    <p><{$Think.config.web_tech}></p>
+                </a>
+                <a class="kwy-capability-card" href="<{$Think.config.web_equipmenturl}>">
+                    <i class="fa fa-flask"></i>
+                    <span>03</span>
+                    <h3><{$Think.config.web_equipmentt}></h3>
+                    <p><{$Think.config.web_equipment}></p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="kwy-section kwy-section--featured">
+        <div class="container">
+            <div class="kwy-section__top kwy-section__top--light">
+                <div>
+                    <span class="kwy-kicker">Product Matrix</span>
+                    <h2>热门产品与材料系列</h2>
+                </div>
+                <a class="kwy-text-link" href="<{:W('Listhref/Listhref',array('',0,'/Inquiry/','lang'=>'c'))}>">获取报价</a>
+            </div>
+            <div class="kwy-product-mosaic">
+                <{:W('List/Lists',array('table'=>'Product','bid'=>1,'id'=>1,1,0,'c'))}>
+            </div>
+        </div>
+    </section>
+
+    <section class="kwy-section kwy-section--latest kwy-section--latest-copy" id="latest-products">
+        <div class="container">
+            <div class="kwy-latest-copy">
+                <div class="kwy-latest-copy__lead">
+                    <span class="kwy-kicker">New Arrivals</span>
+                    <h2>最新产品资料</h2>
+                    <p>我们不把每一个产品都堆在首页，而是把资料按客户常见需求整理成清晰的沟通路径。无论是医疗推车配件、精密加工、模具注塑，还是聚脲防腐防水材料，都可以先从应用场景、尺寸要求、材料性能和交付节奏开始确认。</p>
+                    <p>如果已有图纸、样件、现场照片或项目参数，科纬易可以根据资料快速判断适合的产品方向，并给出下一步选型、打样或报价建议。</p>
+                    <div class="kwy-latest-copy__actions">
+                        <a class="kwy-btn kwy-btn--primary" href="<{:W('Listhref/Listhref',array('',0,'/Inquiry/','lang'=>'c'))}>">提交项目需求</a>
+                        <a class="kwy-text-link" href="<{:W('Listhref/Listhref',array('',1,'','c'))}>">浏览产品中心</a>
+                    </div>
+                </div>
+                <div class="kwy-latest-copy__notes">
+                    <div>
+                        <span>01</span>
+                        <h3>先看应用</h3>
+                        <p>确认用于医疗设备、智能设备、工业结构件，还是防腐防水工程。</p>
+                    </div>
+                    <div>
+                        <span>02</span>
+                        <h3>再看要求</h3>
+                        <p>梳理尺寸、材料、表面处理、耐腐蚀、防水、耐磨和安装方式。</p>
+                    </div>
+                    <div>
+                        <span>03</span>
+                        <h3>匹配交付</h3>
+                        <p>按样件验证、批量加工、模具注塑或材料配套安排后续服务。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="kwy-section kwy-section--process">
+        <div class="container">
+            <div class="kwy-section__top">
+                <div>
+                    <span class="kwy-kicker">Workflow</span>
+                    <h2>从需求到交付的协作流程</h2>
+                </div>
+            </div>
+            <div class="kwy-process-grid">
+                <div><span>01</span><h3>需求确认</h3><p>明确应用场景、产品参数、材料要求和交付周期。</p></div>
+                <div><span>02</span><h3>方案匹配</h3><p>围绕加工、模具、注塑或涂层需求匹配合适方案。</p></div>
+                <div><span>03</span><h3>样件与资料</h3><p>提供样件、图纸、宣传册参数和应用说明支持评估。</p></div>
+                <div><span>04</span><h3>交付跟进</h3><p>推进生产、包装、发货和后续技术沟通。</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="kwy-cta" id="constructionsite" style="--cta-image: url('__ROOT__/Uploads/<{$Think.config.web_logo4}>');">
+        <div class="container">
+            <div class="kwy-cta__content">
+                <span class="kwy-kicker">Project Ready</span>
+                <h2><{$Think.config.web_kouhao1}></h2>
+                <a class="kwy-btn kwy-btn--primary" href="<{:W('Listhref/Listhref',array('',25,'','c'))}>">了解公司能力</a>
+            </div>
+        </div>
+    </section>
+</main>
+</block>

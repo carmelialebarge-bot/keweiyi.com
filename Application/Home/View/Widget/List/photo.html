@@ -1,0 +1,7 @@
+<if condition="$photo">
+  <ul>
+    <volist name='photo' id='vo' offset="0" length="8">
+      <li><img src="__ROOT__/Uploads/<{$vo.thumb}>" width="50" height="50"/><a href="<{:W('Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Photo'))}>"><{$vo.name|mb_substr=###,0,12,'utf-8'}></a></li>
+    </volist>
+  </ul>
+</if>

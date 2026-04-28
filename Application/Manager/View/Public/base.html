@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>吉辰网站管理系统</title>
+		<meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="__CSS__/bootstrap.min.css" />
+		<link rel="stylesheet" href="__CSS__/bootstrap-responsive.min.css" />
+		<link rel="stylesheet" href="__CSS__/uniform.css" />
+		<link rel="stylesheet" href="__CSS__/common.css" />
+		<link rel="stylesheet" href="__CSS__/index.css" />
+				
+		<link rel="stylesheet" href="__CSS__/unicorn.main.css" />
+		<link rel="stylesheet" href="__CSS__/unicorn.grey.css" class="skin-color" />
+		<script src="__JS__/jquery.min.js"></script>
+		<block name="css">
+		</block>
+		
+	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	</head>
+	<body>
+	                     <div id="top-alert" class="fixed alert alert-error" style="display: none;position: fixed !important;">
+									<button class="close fixed" style="margin-top: 4px;position: fixed !important;">&times;</button>
+									<div class="alert-content">这是内容</div>
+								</div>
+		
+		
+		<div id="header">
+			<h1><a href="__MODULE__">吉辰网站管理系统</a></h1>		
+		</div>
+		
+		
+		<div id="user-nav" class="navbar navbar-inverse">
+            <ul class="nav btn-group">
+                <li class="btn btn-inverse"><a title="用户管理" href="<{:U('User/index')}>"><i class="icon icon-user"></i> <span class="text"><{$Think.session.uname}></span></a></li>
+                <li class="btn btn-inverse" ><a title="清除缓存" href="<{:U('Deltemp/index')}>" ><i class="icon icon-trash"></i> <span class="text">清理缓存</span></a> </li>
+                <li class="btn btn-inverse"><a title="网站设置" href="<{:U('Config/index')}>"><i class="icon icon-cog"></i> <span class="text">设置</span></a></li>
+                <li class="btn btn-inverse"><a title="退出系统" href="<{:U('Index/loginOut')}>"><i class="icon icon-share-alt"></i> <span class="text">登出</span></a></li>
+            </ul>
+        </div>
+            
+		<div id="sidebar">
+			<a href="__MODULE__" class="visible-phone"><i class="icon  icon-th"></i> 系统信息</a>
+			<ul>
+				<block name="active"><li ></block><a href="__MODULE__"><i class="icon  icon-th"></i> <span>系统信息</span></a></li>
+				<block name="menuactive1"><li class="submenu active open"></block>
+					<a href="#"><i class="icon icon-book"></i> <span>网站管理</span> </a>
+					<ul>
+						<li><a href="<{:U('Config/index')}>">网站设置</a></li>
+						<li><a href="<{:U('List/index')}>">栏目管理</a></li>
+						<li><a href="<{:U('Feedback/index')}>">留言管理</a></li>
+						<li><a href="<{:U('inquiry/index')}>">订单管理</a></li>
+					</ul>
+				</li>
+				<block name="menuactive2"><li class="submenu"></block>
+					<a href="#"><i class="icon icon-briefcase"></i> <span>内容管理</span> </a>
+					<ul>
+						<li><a href="<{:U('Product/add')}>">添加产品</a></li>
+						<li><a href="<{:U('Product/index')}>">管理产品</a></li>
+						<li><a href="<{:U('New/add')}>">添加新闻</a></li>
+						<li><a href="<{:U('New/index')}>">管理新闻</a></li>
+						
+						<li><a href="<{:U('Download/add')}>">添加下载</a></li>
+						<li><a href="<{:U('Download/index')}>">管理下载</a></li>
+					</ul>
+				</li>
+				<block name="menuactive3"><li class="submenu"></block>
+					<a href="#"><i class="icon icon-film"></i> <span>轮播图管理</span> </a>
+					<ul>
+						<li><a href="<{:U('Flash/add')}>">添加图片</a></li>
+						<li><a href="<{:U('Flash/index')}>">管理图片</a></li>
+						
+					</ul>
+				</li>
+				<block name="menuactive4"><li class="submenu"></block>
+					<a href="#"><i class="icon icon-retweet"></i> <span>友情链接</span> </a>
+					<ul>
+						<li><a href="<{:U('Link/add')}>">添加链接</a></li>
+						<li><a href="<{:U('Link/index')}>">链接列表</a></li>
+						
+					</ul>
+				</li>
+				<block name="menuactive5"><li class="submenu"></block>
+					<a href="#"><i class="icon icon-screenshot"></i> <span>网站优化</span></a>
+					<ul>
+						<li><a href="<{:U('Config/setstatic')}>">伪静态设置</a></li>
+						<li><a href="<{:U('Home/Sitemap/index')}>">生成站点地图</a></li>
+						<li><a href="<{:U('Home/Sitemap/baidu')}>">百度sitemap</a></li>
+						<li><a href="<{:U('Home/Sitemap/google')}>">谷歌sitemap</a></li>
+						
+						<li><a href="<{:U('Inside/index')}>">内链优化管理</a></li>
+						
+					</ul>
+				</li>
+				<block name="menuactive6"><li class="submenu"></block>
+					<a href="#"><i class="icon  icon-wrench"></i> <span>其它设置</span> </a>
+					<ul>
+						<li><a href="<{:U('User/index')}>">用户管理</a></li>
+						
+						<li><a href="<{:U('Config/water')}>">水印设置</a></li>
+						<li><a href="<{:U('Deltemp/index')}>">清除缓存</a></li>
+						
+						
+					</ul>
+				</li>
+				
+			</ul>
+		
+		</div>
+		
+		
+		
+		<div id="content">
+			<div id="content-header">
+				<h1><block name="hometitle">管理面板</block></h1>
+				<div class="btn-group">
+					<a href="__ROOT__/" class="btn btn-large tip-bottom" title="前台首页"><i class="icon-home"></i></a>
+					<a href="<{:U('Config/index')}>" class="btn btn-large tip-bottom" title="网站设置"><i class="icon-cog"></i></a>
+					<a href="<{:U('List/index')}>" class="btn btn-large tip-bottom" title="栏目管理"><i class="icon-th-list"></i></a>
+					<a href="<{:U('Product/index')}>" class="btn btn-large tip-bottom" title="产品管理"><i class="icon-hdd"></i></a>
+					<a href="<{:U('New/index')}>" class="btn btn-large tip-bottom" title="新闻管理"><i class="icon-list-alt"></i></a>
+					<a href="<{:U('Download/index')}>" class="btn btn-large tip-bottom" title="下载管理"><i class="icon-download-alt"></i></a>
+					<a href="<{:U('Flash/index')}>" class="btn btn-large tip-bottom" title="广告管理"><i class="icon-facetime-video"></i></a>
+					<a href="<{:U('User/index')}>" class="btn btn-large tip-bottom" title="用户管理"><i class="icon-user"></i></a>
+					<a href="<{:U('Link/index')}>" class="btn btn-large tip-bottom" title="友情链接管理"><i class="icon-random"></i></a>
+				</div>
+			</div>
+			
+			<div class="container-fluid">
+			<block name="contents">
+			主要内容
+				 </block>
+		</div>
+	</div>
+		
+            <script src="__JS__/jquery.ui.custom.js"></script>
+            <script src="__JS__/bootstrap.min.js"></script>
+            <script src="__JS__/bootstrap-colorpicker.js"></script>
+            
+           
+			<script src="__JS__/common.js"></script>
+         
+            <script src="__JS__/unicorn.js"></script>
+            <script src="__JS__/unicorn.form_common.js"></script>
+			  <block name="js">
+         
+		</block>
+			
+			
+	</body>
+</html>

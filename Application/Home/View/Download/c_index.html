@@ -1,0 +1,39 @@
+<extend name="Public/c_base"/>
+<block name="seoinfo">
+<title><{$article.title}></title>
+<meta name="keywords" content="<{$article.keywords}>" />
+<meta name="description" content="<{$article.description}>" />
+</block>
+<block name="contents">
+		<div id="content">
+	<div class="container" style="padding: 10px 0 0 0">	
+	<div class="one-fourth sidebar right">
+	<{:W('Left/Left',array('id'=>1,'type'=>'product','c'))}>
+	</div>
+<div class="three-fourth">
+	<div>
+		
+<!-- Breadcrumb -->
+<div class="breadcrumb">
+	<{:W('Bread/Bread',array($articlelist['id'],'c'))}></div>
+<!-- /Breadcrumb -->		
+
+<div class="span12" style="margin-left: 0;">
+<h1><{$article.name}></h1>
+<p class="download_btn"><a href="<{:U('Common/down',array('name'=>$article['filename']))}>" title="<{$article.name}>" target="_blank"><img src="__IMG__/Download_btn.jpg" alt="<{$article.name}>"/></a></p> 
+		<{$article.contents|htmlspecialchars_decode}>
+	</div>
+	
+		</div>
+</div>
+</div>
+</div>		
+<include file="Public/c_foot" />
+	</div>
+	<!-- main wrapp starts-->
+</div>
+</block>
+<!-- main container ends-->
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<extend name="Public/e_base"/>
+<block name="seoinfo">
+<title>Inquiry-<{$Think.config.seo_etitle}></title>
+<meta name="keywords" content="<{$Think.config.seo_ekeywords}>" />
+<meta name="description" content="<{$Think.config.seo_edescription}>" />
+
+</block>
+
+<block name="contents">
+    <div class="page-heading style-2">
+<div class="container">
+     <h1>Inquiry to us </h1>
+<ul class="breadcrumbs"><li><a href="<{:W('Index/Index',array('cnen'=>'en','lang'=>'e'))}>">Home</a></li><li>Inquiry</li></ul>                    
+</div>
+</div>
+ <SCRIPT language=javaScript>
+function CheckJob()
+{
+    if (document.myform.product.value.length==""){
+        alert ("Please enter the product name!");
+        document.myform.product.focus();
+        return false;
+    }
+    if (document.myform.name.value.length==""){
+        alert ("Please enter your name!");
+        document.myform.name.focus();
+        return false;
+    }
+    if (document.myform.tel.value.length==""){
+        alert ("Please enter the phone!");
+        document.myform.tel.focus();
+        return false;
+    }
+  if (document.myform.email.value.length==""){
+    alert ("Please enter the email address!");
+    document.myform.email.focus();
+    return false;
+  }
+ }
+</SCRIPT>
+<section class="container"><div class="row"><div class="col-md-8"><h2 class="text-center"><span>Fill your demand in this form</span></h2>
+            <div role="form"  id="wpcf7-f452-p15-o1" dir="ltr" lang="en-US">
+<div class="screen-reader-response"></div>
+<form id="myform" name="myform" action="__ROOT__/?m=Home&c=Inquiry&a=check&g=e" method="post" class="wpcf7-form" onSubmit="return CheckJob()" >
+
+<div class="col-sm-12 noleftpadding">
+<div style="width:50%; margin:0 auto;">
+<p><span class="wpcf7-form-control-wrap your-name"><input name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="Your name*" type="text"></span> </p>
+<p><span class="wpcf7-form-control-wrap your-email"><input name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="Email*" type="email"></span> </p>
+<p><span class="wpcf7-form-control-wrap "><input name="tel" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false" placeholder="Phone number*" type="tel"></span></p>
+
+<p><span class="wpcf7-form-control-wrap "><input name="product" value="<{$ordername}>" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false" placeholder=" <if condition="$ordername">Product name:<{$ordername}><else />Product name*</if>" type="text"></span></p>
+
+<p><span class="wpcf7-form-control-wrap "><input name="num" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false" placeholder="Quantity(optional)" type="text"></span></p>
+
+<h4>You can fill your detail demand here</h4>
+<p><span class="wpcf7-form-control-wrap your-message"><textarea name="contents" cols="25" rows="3" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" placeholder="the detail info"></textarea></span> </p>
+
+<p><input value="SUBMIT" class="wpcf7-form-control wpcf7-submit" type="submit"></p>
+</div>
+</div>
+<div class="wpcf7-response-output wpcf7-display-none"></div>
+</form>
+
+            </div></div><div class="col-md-4"><h4 class=""><span>CONTACT US</span></h4>	
+                <div class="vc_empty_space" style="height: 15px"><span class="vc_empty_space_inner"></span></div>
+<div class="text">
+<p><strong><{$Think.config.web_ename}></strong></p> 
+<p>Tel: <{$Think.config.web_tel}> </p>
+<p>Fax: <{$Think.config.web_fax}></p>
+<p>E-mail: <a href="mailto:<{$Think.config.web_email}>"><{$Think.config.web_email}></a></p>
+<p>Address: <{$Think.config.web_eadd}></p></div>	<div class="vc_empty_space" style="height: 15px"><span class="vc_empty_space_inner"></span></div>
+</div></div>
+</section> 
+
+</block>

@@ -1,0 +1,47 @@
+<div class="kwy-featured-grid">
+<volist name="product" id="vo" offset="0" length="8" key="i">
+    <article class="kwy-featured-card">
+        <a class="kwy-featured-card__link" href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','c'))}>">
+            <h3><{$vo.name}></h3>
+            <p><if condition="$i eq 1">用于医疗推车、设备支架与安装结构件，覆盖标准件选型、定制配套和批量交付。<elseif condition="$i eq 2"/>围绕铝合金、金属结构件与功能件加工，支持来图打样、小批量验证和稳定量产。<elseif condition="$i eq 3"/>提供金属模具、ABS模具及塑料件开发配套，兼顾结构精度、装配尺寸和生产效率。<elseif condition="$i eq 4"/>适用于外壳、盖板、连接件等塑料配件，按样件、图纸和装配要求推进注塑成型。<elseif condition="$i eq 5"/>面向复杂结构、试制样件和小批量功能件，辅助快速验证设计并缩短开发周期。<elseif condition="$i eq 6"/>弹性体聚脲防护涂层，用于防水、防腐、耐磨等场景，适合设备、管线与工程表面保护。<elseif condition="$i eq 7"/>海水淡化沉箱专用防腐耐磨涂层，关注潮湿、盐雾和长期侵蚀环境下的防护稳定性。<elseif condition="$i eq 8"/>电厂除盐水箱专用聚脲防腐防护涂层，适合水箱内壁、配套设备及维护工程使用。<else /><{$vo.description|mb_substr=###,0,68,'utf-8'}>...</if></p>
+        </a>
+    </article>
+</volist>
+</div>
+
+<volist name="product1" id="vo" offset="0" length="$pronum">
+<div class="vc_grid-item vc_clearfix vc_col-sm-12 vc_grid-item-zone-c-top vc_visible-item zoomIn animated">
+    <div class="vc_grid-item-mini vc_clearfix">
+        <div class="vc_gitem-zone vc_gitem-zone-c vc_custom_1436801836264">
+            <div class="vc_gitem-zone-mini">
+                <div class="vc_gitem_row vc_row vc_gitem-row-position-top">
+                    <div class="vc_col-sm-6 vc_gitem-col vc_gitem-col-align-left">
+                        <div class="wpb_single_image wpb_content_element vc_align_">
+                            <div class="wpb_wrapper">
+                                <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','c'))}>" class="vc_gitem-link" title="<{$vo.name}>">
+                                    <div class="vc_single_image-wrapper vc_box_border_grey">
+                                        <img src="__ROOT__/Uploads/<{$vo.thumb}>" class="vc_single_image-img attachment-medium" alt="<{$vo.name}>" height="161" width="300">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vc_col-sm-6 vc_gitem-col vc_gitem-col-align-left">
+                        <div class="vc_custom_heading vc_gitem-post-data vc_gitem-post-data-source-post_title">
+                            <h4 style="text-align: left">
+                                <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','c'))}>" class="vc_gitem-link" title="<{$vo.ename}>"><{$vo.name}></a>
+                            </h4>
+                            <p><{$vo.description|mb_substr=###,0,100,'utf-8'}>...</p>
+                        </div>
+                        <div class="vc_btn3-container vc_btn3-left">
+                            <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','c'))}>" class="vc_gitem-link vc_general vc_btn3 vc_btn3-size-sm vc_btn3-shape-rounded vc_btn3-style-flat vc_btn3-color-info" title="Read more">详细信息</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vc_gitem-animated-block"></div>
+    </div>
+    <div class="vc_clearfix"></div>
+</div>
+</volist>

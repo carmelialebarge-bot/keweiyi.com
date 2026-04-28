@@ -1,0 +1,98 @@
+<extend name="Public/base"/>
+
+
+<block name="active">
+		<li >
+		</block>
+<block name="menuactive1">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive2">
+	<li class="submenu">
+		</block>
+<block name="menuactive3">
+	<li class="submenu">
+		</block>
+
+<block name="menuactive4">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive5">
+		<li class="submenu active open">
+		</block>
+<block name="menuactive6">
+		<li class="submenu">
+		</block>
+<block name="hometitle">网站优化</block>
+<block name="contents">
+			<div class="row-fluid">
+			<div class="span12">
+			<div class="widget-box">
+							<div class="widget-title">
+
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+
+								<h5>添加内部链接</h5><h5><a href="<{:U('Link/index')}>">返回内链列表</a></h5>
+							</div>
+							<div id="top-alert" class="fixed alert alert-error" style="display: none;position: fixed !important;">
+									<button class="close fixed" style="margin-top: 4px;position: fixed !important;">&times;</button>
+									<div class="alert-content">这是内容</div>
+								</div>
+							<div class="widget-content nopadding">
+							<form class="form-horizontal" id="myform" action="<{:U('addInside')}>" method="post">
+<DIV class="PageContent">
+<table width="98%" border="0" style="margin:20px;" class="ListCategory">
+  <tr>
+    <td width="12%">内链关键词：</td>
+    <td width="88%" height="35"><input name="keyword" type="text"  style="width: 320px;"> <span style="color:#F00; font-size:12px;">*必填</span> 
+    </td>
+  </tr>
+   <tr>
+    <td>链接地址：</td>
+    <td height="35"><input name="url" type="text"  style="width: 320px;"> <span style="color:#F00; font-size:12px;">*必填</span></td>
+  </tr>
+
+  <tr>
+    <td >内链关键词(英文)：</td>
+    <td  height="35"><input name="ekeyword" type="text"  style="width: 320px;"> <span style="color:#F00; font-size:12px;">*必填</span> 
+    </td>
+  </tr>
+
+  <tr>
+    <td>链接地址(英)：</td>
+    <td height="35"><input name="eurl" type="text"  style="width: 320px;"> <span style="color:#F00; font-size:12px;">*必填</span></td>
+  </tr>
+
+  <tr>
+    <td>内链频率：</td>
+    <td height="35"><input name="number" type="text" value="1"  style="width: 50px;"> <span style="color:#F00; font-size:12px;">*填数字</span> <a title='匹配关键词的次数'style="margin-left: 5px;" href="#"><img src="__IMG__/help.gif"></a></td>
+  </tr>
+  
+
+  
+  <tr>
+    <td height="55" align="center">
+    </td>
+    <td height="55" align="left">
+    <input type="submit" value="提交" class="btn submit-btn ajax-post" target-form="form-horizontal">&nbsp;&nbsp;
+    <input name="reset" type="reset"  class="btn submit-btn" value="重置" />
+    </td>
+    </tr>
+</table>
+</DIV>
+</form>
+								
+ 
+ 
+							</div>
+						</div>
+				</div>
+			</div>
+			
+			
+				 </block>
+				 

@@ -1,0 +1,37 @@
+<footer id="footer" class="style-01"><!--footer starts -->
+			<section class="container">
+				 <!-- Block CMS module -->
+<section class="one-fourth" style="width:33.3333%;">
+		  <h4>新闻中心</h4>
+	  <{:W('List/Lists',array('table'=>'New','bid'=>2,'id'=>2,'c'))}>
+	</section>
+<!-- /Block CMS module -->
+
+
+<!-- Block categories module -->
+<section class="one-fourth" style="width:33.3333%;">
+	<h4>产品类别</h4>
+		<{:W('Plist/Plist',array('id'=>1,'c'))}>
+</section>
+<section class="one-fourth" style="width:33.3333%;">
+	<h4>联系我们</h4>
+	<div class="flickr-widget">
+		<p><em class="icon-map-marker"></em> <{$Think.config.web_add}></p>
+<p><em class="icon-phone"></em> <{$Think.config.web_tel}></p>
+<p><em class="icon-fax"></em>  <{$Think.config.web_fax}></p>
+<p><em class="icon-envelope"></em> <a href="mailto:<{$Think.config.web_email}>"><{$Think.config.web_email}></a></p>
+<p><{$Think.config.web_share}>﻿</p>
+	</div>
+</section>
+			</section>
+		</footer>
+		<section id="copyrights">
+		<section class="container">
+		<div class="one-half" style="width:100%;">
+			<p>
+				 <{$Think.config.web_copyright}>&nbsp;<{$Think.config.web_icp}>&nbsp;<a href="__ROOT__/c_sitemap.html"> &nbsp;网站地图  </a>
+			<{$Think.config.web_count}></p>
+		</div>
+		
+		</section>
+		</section>

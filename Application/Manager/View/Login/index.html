@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title><{$Think.config.web_name}></title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="__CSS__/bootstrap.min.css" />
+<style type="text/css">
+<!--
+*{margin:0px; padding:0px;}
+body{background-color:#f9f8f3;}
+.login_main{margin-top:120px}
+.login_box{margin:0 auto; width:525px; height:457px; background:url(__IMG__/lbg.png) no-repeat;padding-top:150px}
+.login_text{font-size:13px; color:#075398; width:270px; margin-top:200px; }
+.login_text P{height:38px;vertical-align:middle;}
+.login_submit{padding-left:50px;}
+
+.code_bg{width:90px; border-right:1px solid #88b0dc;}
+
+-->
+</style>
+<script language="javascript"> 
+	function fsubmit(obj){ 
+	obj.submit(); 
+	} 
+	function freset(obj){ 
+	obj.reset(); 
+	} 
+</script> 
+
+</head>
+<body>
+<div class="login_main">
+    <div class="login_box">
+<form name="myform" method="post" action="<{:U('Login/checkLogin')}>">
+	<div style="margin-bottom:25px;" class="input-prepend">
+  <span style="margin-left:90px;" class="add-on">账号</span>
+  <input class="span4" name="username" type="text" autocomplete="off">
+</div>
+<div style="margin-bottom:25px;" class="input-prepend">
+  <span style="margin-left:90px;" class="add-on">密码</span>
+  <input class="span4"  name="password"  type="password" autocomplete="off">
+</div>
+<div style="margin-bottom:25px;" class="input-prepend">
+  <span style="margin-left:90px;" class="add-on">验证码</span>
+  <input class="span2" name="code" type="text" autocomplete="off"><img src="<{:U('Login/verify')}>" onclick='this.src=this.src+"?"+Math.random()' style="margin-bottom:-5px;">
+</div>
+<div  style="max-width: 342px; margin: 0 auto 10px;">
+              <button type="submit" class="btn btn-large btn-block btn-warning">登陆</button>
+              
+            </div>
+
+  
+ 
+
+        </form>    
+    	
+    </div>
+	</div>
+	<script src="__JS__/jquery.min.js"></script>
+	<script src="__JS__/bootstrap.min.js"></script>
+</body>
+</html>

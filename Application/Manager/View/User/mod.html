@@ -1,0 +1,78 @@
+<extend name="Public/base"/>
+ 
+
+<block name="active">
+		<li >
+		</block>
+<block name="menuactive1">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive2">
+	<li class="submenu">
+		</block>
+<block name="menuactive3">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive4">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive5">
+		<li class="submenu">
+		</block>
+<block name="menuactive6">
+		<li class="submenu active open">
+		</block>
+<block name="contents">
+			<div class="row-fluid">
+			<div class="span12">
+			<div class="widget-box">
+							<div class="widget-title">
+
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+
+								<h5>修改用户</h5><h5><a href="<{:U('User/index')}>">返回用户列表</a></h5>
+							</div>
+							
+							<div class="widget-content nopadding">
+								<form  class="form-horizontal" name="myform" id="myform" action="<{:U('upUser')}>" method="post">
+								<DIV class="PageContent">
+								<table width="98%" border="0" style="margin:20px;" class="ListCategory">
+								  <tr>
+									<td width="9%">用户名：</td>
+									<td width="91%" height="35"><input name="username" value="<{$user.username}>" type="text" class="FormSmall" style="width: 220px;"> 
+									</td>
+								  </tr>
+								  
+								  <tr>
+									<td>密 码：</td>
+									<td height="35"><input name="password" type="password"  style="width: 220px;">
+									<span style="color:#333333; font-size:12px;">如密码不修改，请留空！</span>
+									</td>
+								  </tr>
+								  
+								  <tr>
+									<td height="55" align="center">
+									</td>
+									<td height="55" align="left">
+									<input type="hidden" name="id" value="<{$user.id}>">
+									<input type="submit" value="确认修改" class="btn submit-btn ajax-post" target-form="form-horizontal">
+									</td>
+									</tr>
+								</table>
+								</DIV>
+								</form>
+ 
+ 
+							</div>
+						</div>
+				</div>
+			</div>
+			
+			
+				 </block>
+				 

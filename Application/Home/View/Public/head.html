@@ -1,0 +1,35 @@
+
+
+    <div id="header">
+
+        <div class="box">
+    
+            <div id="logo"><img src="__ROOT__/Uploads/<{$Think.config.web_logo}>" alt="<{$Think.config.web_name}>"/></div>
+
+            <include file='Public:translate'/>
+            
+            <div class="searchformzone">
+                <form id="searchform" method="get" action="<{:U('Search/index')}>">
+                    <div class="searchform">
+                        <input type="text" name="name" class="input" value="" onblur="if(this.value.length<1)this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue)this.value=''"/>
+                    </div>
+                    <div class="search_submit">
+                      <a href="javascript:searchform.submit();"><img src="__PUBLIC__/Home/images/search_btn.jpg" alt="Products Search"></a>
+                    </div>
+                </form>
+            </div>
+            
+         
+        </div>
+           <div id="mainmenu" style="height:39px;">
+	<div id="menu">
+<div id="box11248228bd3fed1d3ac3704814cfd76f" class="block block_menu2  class='tm7 last'" style="width:891px;height:39px;top:0px;left:25px;z-index:999998;">
+<div id="menu152070" class="menu">
+<{:W('Nav/Nav')}>
+</div>
+</div></div></div>
+            <!-- end of Nav -->
+            
+    </div>
+    <!-- end of header -->
+	

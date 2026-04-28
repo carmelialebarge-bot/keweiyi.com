@@ -1,0 +1,48 @@
+<extend name="Public/c_base"/>
+<block name="seoinfo">
+<title>网站地图-<{$Think.config.seo_title}></title>
+<meta name="keywords" content="<{$Think.config.seo_keywords}>" />
+<meta name="description" content="<{$Think.config.seo_description}>" />
+<style>
+li {list-style-type:none;}
+</style>
+</block>
+
+<block name="contents">
+ <div class="page-heading style-2">
+      <div class="container">
+           <h1>网站地图</h1>
+      <ul class="breadcrumbs">
+         <li><a href="<{:W('Index/Index',array('cnen'=>'cn','lang'=>'c'))}>">首页</a></li><li>网站地图</li>
+      </ul>                    
+      </div>
+  </div>  
+<section class="container">
+    <div class="row">
+       <aside class="sidebar col-md-3">
+          <ul>
+           <li id="nav_menu-2" class="widget-container widget_nav_menu"><h3 class="widget-title">导航</h3><div class="menu-left-our-service-bar-container"><ul id="menu-left-our-service-bar" class="menu"><li id="menu-item-1004" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-9 current_page_item menu-item-has-children menu-item-1004"><a href="<{:W('Listhref/Listhref',array('',1,'','c'))}>">产品分类</a>
+<{:W('Left/Left',array('id'=>1,'type'=>'product','c_left'))}>
+                       </li>
+                   </ul>
+               </div>
+           </li>                        
+          </ul>
+        </aside>   
+        <div class="col-md-9">
+            <div class="row">
+                 <ul class="ul_sitemap">
+            <li><a href="<{:W('Index/Index',array('cnen'=>'cn','lang'=>'c'))}>" target="_blank">首页</a></li>
+            <volist name="list" id="vo">
+                 <li <if condition='$vo.level eq 2'>class="small_li2_sitemap"<elseif condition='$vo.level eq 1'/>class="small_li_sitemap"</if>>|-<{$vo.html}>
+                    <a href="<{:W('Listhref/Listhref',array('url'=>$vo['url'],'id'=>$vo['id'],'link'=>$vo['link'],'e'))}>" target="_blank"><{$vo.name}></a>  
+                 </li>
+            </volist>
+          </ul>
+               </div>
+            
+        </div>
+</section>
+</block>
+
+      

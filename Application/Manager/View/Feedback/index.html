@@ -1,0 +1,110 @@
+<extend name="Public/base"/>
+<block name="css">
+		
+<script type="text/javascript">
+	$(function () {
+		$( '.del' ).click( function () {
+			return confirm('确认删除该留言？');
+		} );
+
+    $( '.alldel' ).click( function () {
+      return confirm('确认删除全部留言？');
+    } );
+	});
+</script>
+         
+		
+
+		</block>
+
+<block name="active">
+		<li >
+		</block>
+<block name="menuactive1">
+		<li class="submenu active open">
+		</block>
+
+<block name="menuactive2">
+		<li class="submenu">
+		</block>
+<block name="menuactive3">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive4">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive5">
+		<li class="submenu">
+		</block>
+<block name="menuactive6">
+		<li class="submenu">
+		</block>
+<block name="hometitle">网站管理</block>
+<block name="contents">
+			<div class="row-fluid">
+			<div class="span12">
+			<div class="widget-box">
+							<div class="widget-title">
+
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+
+								<h5>留言管理</h5><h5><a href="<{:U('Feedback/alldel')}>">清空留言</a> </h5>
+							</div>
+							<div class="widget-content nopadding">
+								
+								
+  <div class="tablelisthead">
+    <ul pid='0'>
+      <li class="li_10">编号</li>
+      <li class="li_40">标题</li>
+      <li class="li_30">日期</li>
+      <li class="li_20">编辑</li>
+    </ul>
+  </div>
+  
+  <div id="languageBox2">
+    <div class="tablelist">
+     <volist name='feed' id='vo'>
+     <dl onmouseover="this.style.background ='#F1F1F1'" onmouseout="this.style.background ='#FFFFFF'">
+          <dt class="li_10">&nbsp;<{$vo.id}></dt>
+          <dt class="li_40"><{$vo.title}></dt>
+          <dt class="li_30"><{$vo.time|date="Y-m-d H:i:s",###}></dt>
+          <dt class="li_20">
+            <a href="<{:U('view',array('id'=>$vo['id']))}>" >查看</a> | 
+            <a href="<{:U('del',array('id'=>$vo['id']))}>" class="confirm ajax-get">删除</a>
+          </dt>
+      </dl>
+    </volist>  
+    </div>
+  </div>
+  
+ <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="36" class="BotNavBg">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="8%" style="padding-left:5px;">
+            </td>
+            <td width="92%" align="center">
+            <div class="page"><{$show}></div>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+				
+
+
+							</div>
+						</div>
+				</div>
+			</div>
+			
+			
+				 </block>
+				  

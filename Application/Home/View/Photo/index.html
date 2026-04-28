@@ -1,0 +1,95 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title><{$photodata.title}></title>
+<meta name="keywords" content="<{$photodata.keywords}>" />
+<meta name="description" content="<{$photodata.description}>" />
+<include file='Public:file'/>
+<load href="__PUBLIC__/Common/css/photo.css"/>
+<script language="javascript">var catid=<{$photodata.pid}>,pid=<{$photolist.pid}>,webroot="__ROOT__/",contenturl="__SELF__";</script>
+<load href="__PUBLIC__/Common/js/photo.js"/>
+<load href="__PUBLIC__/Home/js/left_active.js"/>
+</head>
+<body>
+<include file='Public:head'/>
+<div id="main">
+
+
+    <div id="center">
+
+        <div id="left">
+          <div class="category_title"></div>
+          <{:W('Left/Left',array('id'=>$photodata['bid'],'type'=>'photo'))}>
+            
+          <include file='Public:contact'/>
+        </div>
+        <!-- end of left -->
+        
+        <div id="right">
+               <div class="path_title"><a href="__ROOT__/"><img src="__PUBLIC__/Home/images/home_btn.jpg" class="home_btn" alt="Home"></a>&nbsp; &gt;&nbsp;<{$photolist.name}></div>
+              <h1 class="content_title"><{$photodata.name}></h1>
+
+              <div class="thumbpic">
+                  <a href="javascript:;" class="bntprev"></a>
+                  <div id="piclist">
+                      <ul>
+                        <volist name='photo' id='vo'>
+                          <li><img src="__ROOT__/Uploads/<{$photo[$key]}>" alt="<{$photodata.name|}>"/><tt></tt></li>
+                        </volist>
+                      </ul>
+                  </div>
+                  <a href="javascript:;" class="bntnext"></a>
+              </div>
+              <div id="originalpic">
+                <volist name='photo' id='vo'>
+                  <img name="picautozoom" width="660" src="__ROOT__/Uploads/<{$photo[$key]}>" style="margin:10px 0;"  alt="<{$photodata.name|}>"/>
+                </volist>
+                  <a id="aPrev" style="cursor:url(__PUBLIC__/images/prev.cur),auto"></a>
+                  <a id="aNext" style="cursor:url(__PUBLIC__/images/next.cur),auto"></a>
+              </div>
+
+              <div class="content">
+                <{$photodata.contents}>
+              </div>
+
+              <div class="point">
+                    <span class="to_prev"><{$prevnext.prev}></span>
+                    <span class="to_next"><{$prevnext.next}></span>
+              </div>
+
+                <div class="related_product">
+                    <h2 class="right_info_title">Related photo</h2>
+                    <ul class="products_list">
+                    <volist name="related" id="vo" offset="0" length="4">
+                      <li>
+                        <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Photo'))}>" target="_blank"><img name="picautozoom" src="__ROOT__/Uploads/<{$vo.thumb}>" width="190" height="190" alt="<{$vo.name}>"/></a>
+                        <h3><a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Photo'))}>" title="<{$vo.name|}>" target="_blank"><{$vo.name|mb_substr=###,0,30,'utf-8'}></a></h3>
+                        <p class="pro_desc"><{$vo.description|mb_substr=###,0,62,'utf-8'}>...</p>
+                      </li>
+                    </volist>
+                    </ul>
+                    <div class="clear"></div>
+                </div>
+
+        </div>
+        <!-- end of right -->
+        
+        <div class="clear"></div>
+    </div>
+    <!-- end of center -->
+
+</div>
+<!-- end of main -->
+
+<load href="__PUBLIC__/Common/js/picAutoZoom.js"/>
+<script type="text/javascript" language="javascript">
+    $.ajaxSetup({
+        timeout: 300000
+    });
+</script>
+
+<include file='Public:foot'/>
+
+</body>
+</html>

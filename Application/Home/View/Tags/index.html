@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>TAGS-<{$Think.config.seo_title}></title>
+<meta name="keywords" content="<{$Think.config.seo_keywords}>" />
+<meta name="description" content="<{$Think.config.seo_description}>" />
+<include file='Public:file'/>
+<script language="javascript">var catid="",pid="";</script>
+<load href="../Public/js/left_active.js"/>
+</head>
+<body>
+<include file='Public:head'/>
+<div id="main">
+
+
+    <div id="center">
+
+      <div id="left">
+          <div class="category_title"></div>
+          <ul class="category" id="left_cat">
+             <li><a id="cat_active" href="__SELF__">TAGS</a></li>
+          </ul> 
+          <include file='Public:contact'/>
+      </div>
+      <!-- end of left -->
+        
+        <div id="right">
+          <div class="path_title"><a href="__ROOT__/"><img src="../Public/images/home_btn.jpg" class="home_btn" alt="Home"></a>&nbsp; &gt;&nbsp;TAGS</div>
+          
+          <div class="tags">
+            <ul>
+            <volist name="tags" id="vo">      
+              <li><a href="<{:W('Taghref',array('id'=>$vo['id'],'type'=>$vo['type']))}>" target="_blank"><{$vo.name}></a></li>
+            </volist>
+          </ul>
+          </div>
+            
+          <div class="page"><{$show}></div>
+
+        </div>
+        <!-- end of right -->
+        
+        <div class="clear"></div>
+    </div>
+    <!-- end of center -->
+
+</div>
+<!-- end of main -->
+
+<include file='Public:foot'/>
+
+</body>
+</html>

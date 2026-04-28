@@ -1,0 +1,20 @@
+<?php
+namespace Manager\Model;
+use Think\Model;
+class DownloadModel extends Model{
+	protected $_validate=array(
+		//array(验证字段,验证规则,错误提示,[验证条件,附加规则,验证时间])
+		array('name','require','下载名称不能为空'),
+		array('title','require','seo标题不能为空'),
+		array('sort','number','排序号必须为数字'),
+		array('url','','URL不能有重复值','0','unique',3),
+		array('url','/^[a-zA-Z0-9-\s]{0,200}$/','URL只能是字母,数字或-','0','',3),
+	);
+	
+	protected $_auto=array(
+		//array(填充字段,填充内容,[填充条件,附加规则])
+		array('time','time',1,'function'),
+	);
+	
+}
+?>

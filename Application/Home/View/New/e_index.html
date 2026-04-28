@@ -1,0 +1,50 @@
+<extend name="Public/e_base"/>
+<block name="seoinfo">
+<title><{$article.etitle}></title>
+<meta name="keywords" content="<{$article.ekeywords}>" />
+<meta name="description" content="<{$article.edescription}>" />
+</block>
+
+ <block name="contents">
+<div class="page-heading style-2">
+<div class="container">
+    <h1><{$article.etitle}> </h1>
+<ul class="breadcrumbs">
+    <{:W('Bread/Bread',array($articlelist['id'],'e'))}>
+</ul>                    
+</div>
+</div>
+     
+<section class="blog-single">
+    <div class="container">
+        <div class="row">
+                <div class="col-md-9">
+<article class="post style-2">
+<header>
+<span><{$article.time|date="d.m.Y",###}></span>
+<h1><{$article.etitle}></h1>
+<div class="post-meta">
+
+</div>
+</header>
+<div class="post-content">
+     <{$article.econtents|htmlspecialchars_decode}>
+</div> 
+</article>
+</div>
+<aside class="sidebar col-md-3">
+
+<div class="post-nav"><{$prevnext.prev}><br> <{$prevnext.next}></div>
+<ul>
+    <li id="categories-2" class="widget-container widget_categories">
+        <h3 class="widget-title">Categories</h3>		
+       <{:W('Left/Left',array('id'=>1,'type'=>'product','e_right'))}>
+	   
+      </li> 	
+</ul>	
+</aside>   
+              
+        </div>
+      </div>
+</section>
+</block>

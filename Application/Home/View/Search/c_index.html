@@ -1,0 +1,88 @@
+﻿<extend name="Public/c_base"/>
+<block name="seoinfo">
+<title><{$keyword}>-<{$Think.config.seo_title}></title>
+<meta name="keywords" content="<{$Think.config.seo_keywords}>" />
+<meta name="description" content="<{$Think.config.seo_description}>" />
+</block>
+<block name="contents"> 
+  <div class="page-heading style-2">
+      <div class="container">
+      <ul class="breadcrumbs">
+           <li><a href="<{:W('Index/Index',array('cnen'=>'cn','lang'=>'c'))}>">首页</a></li> 
+           <li> 搜索结果</li>     
+      </ul>                    
+      </div>
+  </div>  
+  <section class="container">
+    <div class="row">
+       <aside class="sidebar col-md-3">
+          <ul>
+           <li id="nav_menu-2" class="widget-container widget_nav_menu"><h3 class="widget-title">导航</h3><div class="menu-left-our-service-bar-container"><ul id="menu-left-our-service-bar" class="menu"><li id="menu-item-1004" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-9 current_page_item menu-item-has-children menu-item-1004"><a href="<{:W('Listhref/Listhref',array('',1,'','e'))}>">产品分类</a>
+<{:W('Left/Left',array('id'=>1,'type'=>'product','c_left'))}>
+                       </li>
+                   </ul>
+               </div>
+           </li>                        
+          </ul>
+        </aside>   
+        <div class="col-md-9">
+            <if condition="$product">
+            <div class="row">
+                <volist name='product' id='vo' offset="0" length='3' >
+                <div class="col-md-4">
+                    <div class="wpb_single_image wpb_content_element vc_align_left">
+                        <div class="wpb_wrapper">
+                            <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','c'))}>" target="_self"><div class="vc_single_image-wrapper   vc_box_border_grey"><img src="__ROOT__/Uploads/<{$vo.thumb}>" class="vc_single_image-img attachment-full" alt="<{$vo.name}>" height="473" width="409"></div></a>
+                        </div> 
+                    </div> 
+                    <h3 class=""><span><{$vo.name|redWord=###,30,$keyword}></span></h3>
+                    <div class="text"><{$vo.description|mb_substr=###,0,200,'utf-8'}>...
+                    </div>	
+                    <div class="vc_empty_space" style="height: 10px">
+                        <span class="vc_empty_space_inner"></span>
+                    </div>
+                    <a target="_self" href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','c'))}>" class="btn btn-sm style-4" id="custom-id-0" style="">详细信息</a>
+                </div>
+             </volist>
+               </div>
+            
+                   <div class="row" style="padding-top: 50px !important;padding-bottom: 50px !important;">
+                <volist name='product' id='vo' offset="3" length='3' >
+                <div class="col-md-4">
+                    <div class="wpb_single_image wpb_content_element vc_align_left">
+                        <div class="wpb_wrapper">
+                            <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','c'))}>" target="_self"><div class="vc_single_image-wrapper   vc_box_border_grey"><img src="__ROOT__/Uploads/<{$vo.thumb}>" class="vc_single_image-img attachment-full" alt="<{$vo.name}>" height="473" width="409"></div></a>
+                        </div> 
+                    </div> 
+                    <h3 class=""><span><{$vo.name|redWord=###,30,$keyword}></span></h3>
+                    <div class="text"><{$vo.description|mb_substr=###,0,200,'utf-8'}>...
+                    </div>	
+                    <div class="vc_empty_space" style="height: 10px">
+                        <span class="vc_empty_space_inner"></span>
+                    </div>
+                    <a target="_self" href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','c'))}>" class="btn btn-sm style-4" id="custom-id-0" style="">详细信息</a>
+                </div>
+             </volist>
+               </div>
+        
+            <div class="row" style="padding-top: 50px !important;padding-bottom: 50px !important;">
+                <div class="wpagenavi">
+                <{$page}>
+               </div>
+                <else />
+				<div align='center'>
+				
+				<br><br><br>找不到你要的产品? 请与我们联系!<br><br><br>
+				
+				</div>
+				</if>   
+                
+            </div>
+        </div>
+</section>
+   
+</block>
+
+
+
+      

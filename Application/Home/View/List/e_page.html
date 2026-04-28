@@ -1,0 +1,23 @@
+<extend name="Public/e_base"/>
+<block name="seoinfo">
+<title><{$list.etitle}></title>
+<meta name="keywords" content="<{$list.ekeywords}>" />
+<meta name="description" content="<{$list.edescription}>" />
+</block>
+
+<block name="contents">
+<div class="page-heading style-2">
+    <div class="container">
+        <h1><{$list.ename}></h1>
+        <ul class="breadcrumbs">
+            <{:W('Bread/Bread',array($id,'e'))}>
+        </ul>
+    </div>
+</div>
+
+<section class="container kwy-content-page">
+    <article class="kwy-content-panel">
+        <div class="text"><{$list.econtents|htmlspecialchars_decode}></div>
+    </article>
+</section>
+</block>

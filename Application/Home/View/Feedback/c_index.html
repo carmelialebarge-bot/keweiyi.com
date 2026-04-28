@@ -1,0 +1,77 @@
+<extend name="Public/c_base"/>
+<block name="seoinfo">
+<title>留言-<{$Think.config.seo_title}></title>
+<meta name="keywords" content="<{$Think.config.seo_keywords}>" />
+<meta name="description" content="<{$Think.config.seo_description}>" />
+</block>
+
+<block name="contents">
+    <div class="page-heading style-2">
+<div class="container">
+     <h1>在线留言 </h1>
+<ul class="breadcrumbs"><li><a href="<{:W('Index/Index',array('cnen'=>'cn','lang'=>'c'))}>">首页</a></li><li>在线留言</li></ul>                    
+</div>
+</div>
+ <SCRIPT language=javaScript>
+function CheckJob()
+{
+  if (document.myform.title.value.length==""){
+    alert ("留言标题不能为空!");
+    document.myform.title.focus();
+    return false;
+  }
+  if (document.myform.name.value.length==""){
+    alert ("姓名不能为空！");
+    document.myform.name.focus();
+    return false;
+  }
+  if (document.myform.tel.value.length==""){
+    alert ("电话不能为空！");
+    document.myform.tel.focus();
+    return false;
+  }
+  if (document.myform.email.value.length==""){
+    alert ("邮箱不能为空");
+    document.myform.email.focus();
+    return false;
+  }
+ }
+</SCRIPT>
+<section class="container"><div class="row"><div class="col-md-8">
+            <h2 class="text-center"><span>填写留言信息</span></h2>
+            <div role="form"  id="wpcf7-f452-p15-o1" dir="ltr" lang="en-US">
+<div class="screen-reader-response"></div>
+<form id="myform" name="myform" action="__ROOT__/?m=Home&c=Feedback&a=check&g=c" method="post" class="wpcf7-form" onSubmit="return CheckJob()" >
+
+<div class="col-sm-12 noleftpadding">
+<div style="width:50%; margin:0 auto;">
+<p><span class="wpcf7-form-control-wrap your-name"><input name="title" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" placeholder="标题*" type="tel"></span> </p>
+<p><span class="wpcf7-form-control-wrap your-email">
+        <input name="name" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="姓名*" type="tel"></span> </p>
+<p><span class="wpcf7-form-control-wrap "><input name="tel" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false" placeholder="电话*" type="tel"></span></p>
+
+<p><span class="wpcf7-form-control-wrap your-email"><input name="email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email wpcf7-validates-as-required wpcf7-validates-as-email" aria-required="true" aria-invalid="false" placeholder="邮箱*" type="email"></span> </p>
+
+<p><span class="wpcf7-form-control-wrap "><input name="add" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-tel wpcf7-validates-as-tel" aria-invalid="false" placeholder="地址" type="tel"></span></p>
+
+<h4>留言内容</h4>
+<p><span class="wpcf7-form-control-wrap your-message"><textarea name="contents" cols="25" rows="3" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" ></textarea></span> </p>
+
+<p><input value="提交" class="wpcf7-form-control wpcf7-submit" type="submit"></p>
+</div>
+</div>
+<div class="wpcf7-response-output wpcf7-display-none"></div>
+</form>
+
+            </div></div><div class="col-md-4"><h4 class=""><span>联系我们</span></h4>	
+                <div class="vc_empty_space" style="height: 15px"><span class="vc_empty_space_inner"></span></div>
+<div class="text">
+<p><strong><{$Think.config.web_name}></strong></p> 
+<p>电话: <{$Think.config.web_tel}> </p>
+<p>传真: <{$Think.config.web_fax}></p>
+<p>电子邮箱: <a href="mailto:<{$Think.config.web_email}>"><{$Think.config.web_email}></a></p>
+<p>地址: <{$Think.config.web_add}></p></div>	<div class="vc_empty_space" style="height: 15px"><span class="vc_empty_space_inner"></span></div>
+</div></div>
+</section> 
+
+</block>

@@ -1,0 +1,106 @@
+<extend name="Public/c_base"/>
+<block name="seoinfo">
+<title><{$article.title}></title>
+<meta name="keywords" content="<{$article.keywords}>" />
+<meta name="description" content="<{$article.description}>" />
+</block>
+
+<block name="contents">
+<div class="page-heading style-2">
+    <div class="container">
+        <h1><{$article.name}></h1>
+        <ul class="breadcrumbs">
+            <{:W('Bread/Bread',array($articlelist['id'],'c'))}>
+        </ul>
+    </div>
+</div>
+
+<section class="blog-single kwy-product-detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <article class="post style-2 kwy-product-article">
+                    <div id="carousel" class="carousel slide">
+                        <ol class="carousel-indicators">
+                            <volist name="photo" id="vo">
+                            <li data-target="#carousel" data-slide-to="<{$i}>" class=""></li>
+                            </volist>
+                        </ol>
+                        <div class="carousel-inner">
+                            <volist name="photo" id="vo" offset="0" length="1">
+                            <div class="item active">
+                                <img alt="<{$article.name}>" src="__ROOT__/Uploads/<{$photo[$key]}>">
+                            </div>
+                            </volist>
+                            <volist name="photo" id="vo" offset="1">
+                            <div class="item">
+                                <img alt="<{$article.name}>" src="__ROOT__/Uploads/<{$photo[$key]}>">
+                            </div>
+                            </volist>
+                        </div>
+                        <a class="left carousel-control" href="#carousel" data-slide="prev"><span class="fa fa-chevron-left"></span></a>
+                        <a class="right carousel-control" href="#carousel" data-slide="next"><span class="fa fa-chevron-right"></span></a>
+                    </div>
+
+                    <div class="post-wallpaper">
+                        <div class="kwy-product-summary">
+                            <span class="kwy-kicker">Product Detail</span>
+                            <h2>产品信息</h2>
+                            <div class="kwy-spec-list">
+                                <p><strong>产品名称:</strong> <{$article.name}></p>
+                                <p><{$article.property1}></p>
+                                <p><{$article.property2}></p>
+                                <p><{$article.property3}></p>
+                                <p><{$article.property4}></p>
+                            </div>
+                        </div>
+
+                        <div class="post-content">
+                            <div class="wp_rp_wrap wp_rp_vertical">
+                                <div class="wp_rp_content">
+                                    <h3 class="related_post_title">产品详情</h3>
+                                    <{$article.contents|htmlspecialchars_decode}>
+                                </div>
+                            </div>
+                            <div class="wp_rp_wrap wp_rp_vertical">
+                                <div class="wp_rp_content">
+                                    <h3 class="related_post_title">相关产品</h3>
+                                    <ul class="related_post wp_rp">
+                                        <volist name="related" id="vo" offset="0" length="4">
+                                        <li data-position="0" data-poid="in-1428" data-post-type="none">
+                                            <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','c'))}>" class="wp_rp_thumbnail">
+                                                <img src="__ROOT__/Uploads/<{$vo.thumb}>" alt="<{$vo.name}>" height="150" width="150">
+                                            </a>
+                                            <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','c'))}>" class="wp_rp_title"><{$vo.name}></a>
+                                        </li>
+                                        </volist>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <aside class="sidebar col-md-3">
+                <div class="post-nav"><{$prevnext.prev}><br><{$prevnext.next}></div>
+                <ul>
+                    <li id="categories-2" class="widget-container widget_categories">
+                        <h3 class="widget-title">产品分类</h3>
+                        <{:W('Left/Left',array('id'=>1,'type'=>'product','c_right'))}>
+                    </li>
+                    <li id="tag_cloud-2" class="widget-container widget_tag_cloud">
+                        <h3 class="widget-title">项目咨询</h3>
+                        <div class="tagcloud">
+                            <form id="orderform" method="post" action="<{:W('Listhref/Listhref',array('',0,'/Inquiry/','lang'=>'c'))}>">
+                                <input type="hidden" name="ordername" value="<{$article.name}>" />
+                                <a target="_self" href="javascript:orderform.submit();" class="btn btn-md style-3" title="inquiry">在线订购</a>
+                            </form>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+    </div>
+</section>
+</block>

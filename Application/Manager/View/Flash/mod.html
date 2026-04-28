@@ -1,0 +1,96 @@
+<extend name="Public/base"/>
+
+
+<block name="active">
+		<li >
+		</block>
+<block name="menuactive1">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive2">
+	<li class="submenu">
+		</block>
+<block name="menuactive3">
+		<li class="submenu active open">
+		</block>
+
+<block name="menuactive4">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive5">
+		<li class="submenu">
+		</block>
+<block name="menuactive6">
+		<li class="submenu">
+		</block>
+<block name="hometitle">轮播图管理</block>
+<block name="contents">
+			<div class="row-fluid">
+			<div class="span12">
+			<div class="widget-box">
+							<div class="widget-title">
+
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+
+								<h5>修改轮播图</h5><h5><a href="<{:U('Flash/index')}>">返回轮播图列表</a></h5>
+							</div>
+							
+							<div class="widget-content nopadding">
+							<form class="form-horizontal" action="<{:U('upflash')}>" method="post" name="myform" id="myform" enctype="multipart/form-data" onSubmit="return CheckJob()">
+<DIV class="PageContent">
+<table width="98%" border="0" style="margin:20px;" class="ListCategory">
+  <tr>
+    <td width="9%">轮播图标题：</td>
+    <td width="91%" height="35"><input name="title" type="text" value="<{$flash.title}>" class="FormSmall" style="width: 320px;"> 
+    </td>
+  </tr>
+
+  <tr>
+    <td>排序ID：</td>
+    <td height="35"><input name="sort" type="text" value="<{$flash.sort}>" class="FormSmall" style="width: 50px;"> <span style="color:#F00; font-size:12px;">*必填</span></td>
+  </tr>
+  
+<!--   <tr> -->
+<!--     <td>轮播图链接：</td> -->
+<!--     <td height="35"><input name="link" type="text" value="<{$flash.link}>" class="FormSmall" style="width: 320px;"></td> -->
+<!--   </tr> -->
+  
+  <tr>
+    <td>轮播图图片：</td>
+    <td height="35">
+    <empty name='flash.photo'>
+    <input type='file' name='photo'>
+    <input type="hidden" name="num" value="1">
+    <else/>
+      <p style="padding:4px 0;">
+     <img src="__ROOT__/Uploads/<{$flash.photo}>" width="80" height="40"/>&nbsp;<a href="<{:U('delphoto',array('name'=>$flash['photo'],'id'=>$flash['id']))}>" class='confirm ajax-get'>删除该图片</a>
+      </p>
+     </empty>
+    </td>
+  </tr>
+  
+  <tr>
+    <td height="55" align="center">
+    </td>
+    <td height="55" align="left">
+    <input type="hidden" name="id" value="<{$flash.id}>">
+    <button type="submit"  class="btn submit-btn ajax-post" target-form="form-horizontal">确认修改</button>
+    </td>
+    </tr>
+</table>
+</DIV>
+</form>
+ 
+ 
+							</div>
+						</div>
+				</div>
+			</div>
+			
+			
+				 </block>
+				 

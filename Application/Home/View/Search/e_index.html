@@ -1,0 +1,88 @@
+﻿<extend name="Public/e_base"/>
+<block name="seoinfo">
+<title><{$keyword}>-<{$Think.config.seo_etitle}></title>
+<meta name="keywords" content="<{$Think.config.seo_ekeywords}>" />
+<meta name="description" content="<{$Think.config.seo_edescription}>" />
+</block>
+<block name="contents"> 
+  <div class="page-heading style-2">
+      <div class="container">
+      <ul class="breadcrumbs">
+           <li><a href="<{:W('Index/Index',array('cnen'=>'en','lang'=>'e'))}>">Home</a></li> 
+           <li> Search</li>     
+      </ul>                    
+      </div>
+  </div>  
+  <section class="container">
+    <div class="row">
+       <aside class="sidebar col-md-3">
+          <ul>
+           <li id="nav_menu-2" class="widget-container widget_nav_menu"><h3 class="widget-title">Navigation</h3><div class="menu-left-our-service-bar-container"><ul id="menu-left-our-service-bar" class="menu"><li id="menu-item-1004" class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-9 current_page_item menu-item-has-children menu-item-1004"><a href="<{:W('Listhref/Listhref',array('',1,'','e'))}>">Products</a>
+<{:W('Left/Left',array('id'=>1,'type'=>'product','e_left'))}>
+                       </li>
+                   </ul>
+               </div>
+           </li>                        
+          </ul>
+        </aside>   
+        <div class="col-md-9">
+            <if condition="$product">
+            <div class="row">
+                <volist name='product' id='vo' offset="0" length='3' >
+                <div class="col-md-4">
+                    <div class="wpb_single_image wpb_content_element vc_align_left">
+                        <div class="wpb_wrapper">
+                            <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','e'))}>" target="_self"><div class="vc_single_image-wrapper   vc_box_border_grey"><img src="__ROOT__/Uploads/<{$vo.thumb}>" class="vc_single_image-img attachment-full" alt="<{$vo.ename}>" height="473" width="409"></div></a>
+                        </div> 
+                    </div> 
+                    <h3 class=""><span><{$vo.ename|redWord=###,30,$keyword}></span></h3>
+                    <div class="text"><{$vo.edescription|mb_substr=###,0,200,'utf-8'}>...
+                    </div>	
+                    <div class="vc_empty_space" style="height: 10px">
+                        <span class="vc_empty_space_inner"></span>
+                    </div>
+                    <a target="_self" href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','e'))}>" class="btn btn-sm style-4" id="custom-id-0" style="">READ MORE</a>
+                </div>
+             </volist>
+               </div>
+            
+                   <div class="row" style="padding-top: 50px !important;padding-bottom: 50px !important;">
+                <volist name='product' id='vo' offset="3" length='3' >
+                <div class="col-md-4">
+                    <div class="wpb_single_image wpb_content_element vc_align_left">
+                        <div class="wpb_wrapper">
+                            <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','e'))}>" target="_self"><div class="vc_single_image-wrapper   vc_box_border_grey"><img src="__ROOT__/Uploads/<{$vo.thumb}>" class="vc_single_image-img attachment-full" alt="<{$vo.ename}>" height="473" width="409"></div></a>
+                        </div> 
+                    </div> 
+                    <h3 class=""><span><{$vo.ename|redWord=###,30,$keyword}></span></h3>
+                    <div class="text"><{$vo.edescription|mb_substr=###,0,200,'utf-8'}>...
+                    </div>	
+                    <div class="vc_empty_space" style="height: 10px">
+                        <span class="vc_empty_space_inner"></span>
+                    </div>
+                    <a target="_self" href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','e'))}>" class="btn btn-sm style-4" id="custom-id-0" style="">READ MORE</a>
+                </div>
+             </volist>
+               </div>
+        
+            <div class="row" style="padding-top: 50px !important;padding-bottom: 50px !important;">
+                <div class="wpagenavi">
+                <{$page}>
+               </div>
+                <else />
+				<div align='center'>
+				
+				<br><br><br>Can't find the items you're looking for? Send us a message and we would help! <br><br><br>
+				
+				</div>
+				</if>   
+                
+            </div>
+        </div>
+</section>
+   
+</block>
+
+
+
+      

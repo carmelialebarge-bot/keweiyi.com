@@ -1,0 +1,108 @@
+<extend name="Public/base"/>
+<block name="css">
+		
+		<script type="text/javascript">
+	$(function () {
+		$( '.del' ).click( function () {
+			return confirm('确认删除该用户？');
+		} );
+	});
+</script>
+		<style type="text/css">
+		.tablelist li{padding:0.95em 0;}
+		.tablelist input{width:28px; height:20px; color:#666;}
+		.proimg{float:left;width:90px; height:40px; margin:-6px 0 0 5px; padding: 1px; background-color:#c2c2c2;}
+		.proimg:hover{background-color:#045ace;}
+		.tablelist li a:hover{color: #045ace; text-decoration: none;}
+		</style>
+ </block>
+
+<block name="active">
+		<li >
+		</block>
+<block name="menuactive1">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive2">
+	<li class="submenu">
+		</block>
+<block name="menuactive3">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive4">
+		<li class="submenu">
+		</block>
+
+<block name="menuactive5">
+		<li class="submenu">
+		</block>
+<block name="menuactive6">
+		<li class="submenu active open">
+		</block>
+<block name="contents">
+			<div class="row-fluid">
+			<div class="span12">
+			<div class="widget-box">
+							<div class="widget-title">
+
+								<span class="icon">
+									<i class="icon-th"></i>
+								</span>
+
+								<h5>用户管理</h5><h5><a href="<{:U('User/add')}>">添加用户</a> </h5>
+							</div>
+							
+							<div class="widget-content nopadding">
+							 <div class="tablelisthead">
+    <ul pid='0'>
+      <li class="li_10">编号</li>
+      <li class="li_40">用户名</li>
+      <li class="li_20">操作</li>
+    </ul>
+  </div>
+  
+  <div id="languageBox2">
+    <div class="tablelist">
+    <volist name='user' id='vo' offset='1'>
+      <ul onmouseover="this.style.background ='#F1F1F1'" onmouseout="this.style.background ='#FFFFFF'" style="height:55px;">
+          <li style="padding-left:2px;" class="li_10"><{$i}></li>
+          <li class="li_40"><{$vo.username}></li>
+          <li class="li_40">
+            <a href="<{:U('mod',array('id'=>$vo['id']))}>" >修改用户</a> | 
+            <a href="<{:U('del',array('id'=>$vo['id']))}>" class="confirm ajax-get">删除用户</a>
+          </li>
+      </ul>
+    </volist>  
+    </div>
+  </div>
+  
+  <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+      <td height="36" class="BotNavBg">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td width="8%" style="padding-left:5px;">
+            
+            </td>
+            <td width="92%" align="center">
+ 
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+								
+ 
+ 
+							</div>
+						</div>
+				</div>
+			</div>
+			
+			
+				 </block>
+				 

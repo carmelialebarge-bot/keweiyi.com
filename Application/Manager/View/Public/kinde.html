@@ -1,0 +1,34 @@
+	<script type="text/javascript">var baiduPath="__PUBLIC__/";</script>
+	<link rel="stylesheet" href="<{$adminName}>/kindeditor/themes/default/default.css" />
+	
+	<script charset="utf-8" src="<{$adminName}>/kindeditor/kindeditor.js"></script>
+	<script charset="utf-8" src="<{$adminName}>/kindeditor/lang/zh_CN.js"></script>
+
+	<script>
+		KindEditor.ready(function(K) {
+			var editor1 = K.create('textarea[name="contents"],textarea[name="econtents"]', {
+				
+				uploadJson : '<{$adminName}>/kindeditor/php/upload_json.php',
+				fileManagerJson : '<{$adminName}>/kindeditor/php/file_manager_json.php',
+				allowFileManager : true,
+				items : [
+        'source', '|', 'undo', 'redo', '|', 'preview', 'print', 'template', 'code', 'cut', 'copy', 'paste',
+        'plainpaste', 'wordpaste', '|', 'justifyleft', 'justifycenter', 'justifyright',
+        'justifyfull', 'insertorderedlist', 'insertunorderedlist', 'indent', 'outdent', 'subscript',
+        'superscript', 'clearhtml', 'quickformat', 'selectall', '|', 'fullscreen', '/',
+        'formatblock', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold',
+        'italic', 'underline', 'strikethrough', 'lineheight', 'removeformat', '|', 'image', 
+         'media', 'insertfile', 'table', 'hr', 'emoticons', 'baidumap', 'pagebreak',
+        'anchor', 'link', 'unlink', '|', 'about'
+]
+,
+
+				
+				 afterBlur: function () { this.sync(); }
+
+			});
+			
+		});
+
+	
+	</script>

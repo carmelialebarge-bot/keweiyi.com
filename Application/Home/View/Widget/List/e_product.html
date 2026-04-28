@@ -1,0 +1,47 @@
+<div class="kwy-featured-grid">
+<volist name="product" id="vo" offset="0" length="8" key="i">
+    <article class="kwy-featured-card">
+        <a class="kwy-featured-card__link" href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','e'))}>">
+            <h3><{$vo.ename}></h3>
+            <p><if condition="$i eq 1">For medical trolleys, equipment brackets and mounting parts, with selection, customization and batch delivery support.<elseif condition="$i eq 2"/>Precision machining for metal structures and functional parts, supporting drawing review, prototypes and stable production.<elseif condition="$i eq 3"/>Metal mould, ABS mould and plastic part development with attention to accuracy, assembly dimensions and production efficiency.<elseif condition="$i eq 4"/>Injection moulded shells, covers and connecting parts developed around samples, drawings and assembly needs.<elseif condition="$i eq 5"/>3D metal printing for complex structures, trial parts and small-batch functional components that need fast validation.<elseif condition="$i eq 6"/>Elastic polyurea protective coating for waterproofing, anticorrosion and wear-resistant surfaces in equipment and projects.<elseif condition="$i eq 7"/>Protective coating for seawater desalination caissons, focused on salt, humidity and long-term corrosion resistance.<elseif condition="$i eq 8"/>Polyurea anticorrosion coating for power plant desalinated water tanks, inner walls and maintenance projects.<else /><{$vo.edescription|mb_substr=###,0,92,'utf-8'}>...</if></p>
+        </a>
+    </article>
+</volist>
+</div>
+
+<volist name="product1" id="vo" offset="0" length="$pronum">
+<div class="vc_grid-item vc_clearfix vc_col-sm-12 vc_grid-item-zone-c-top vc_visible-item zoomIn animated">
+    <div class="vc_grid-item-mini vc_clearfix">
+        <div class="vc_gitem-zone vc_gitem-zone-c vc_custom_1436801836264">
+            <div class="vc_gitem-zone-mini">
+                <div class="vc_gitem_row vc_row vc_gitem-row-position-top">
+                    <div class="vc_col-sm-6 vc_gitem-col vc_gitem-col-align-left">
+                        <div class="wpb_single_image wpb_content_element vc_align_">
+                            <div class="wpb_wrapper">
+                                <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','e'))}>" class="vc_gitem-link" title="<{$vo.ename}>">
+                                    <div class="vc_single_image-wrapper vc_box_border_grey">
+                                        <img src="__ROOT__/Uploads/<{$vo.thumb}>" class="vc_single_image-img attachment-medium" alt="<{$vo.ename}>" height="161" width="300">
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="vc_col-sm-6 vc_gitem-col vc_gitem-col-align-left">
+                        <div class="vc_custom_heading vc_gitem-post-data vc_gitem-post-data-source-post_title">
+                            <h4 style="text-align: left">
+                                <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','e'))}>" class="vc_gitem-link" title="<{$vo.ename}>"><{$vo.ename}></a>
+                            </h4>
+                            <p><{$vo.edescription|mb_substr=###,0,100,'utf-8'}>...</p>
+                        </div>
+                        <div class="vc_btn3-container vc_btn3-left">
+                            <a href="<{:W('Href/Href',array('url'=>$vo['url'],'id'=>$vo['id'],'type'=>'Product','e'))}>" class="vc_gitem-link vc_general vc_btn3 vc_btn3-size-sm vc_btn3-shape-rounded vc_btn3-style-flat vc_btn3-color-info" title="Read more">Read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="vc_gitem-animated-block"></div>
+    </div>
+    <div class="vc_clearfix"></div>
+</div>
+</volist>

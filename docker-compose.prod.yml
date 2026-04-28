@@ -2,6 +2,7 @@ version: "3.3"
 
 services:
   web:
+    image: ${KEWEIYI_WEB_IMAGE:-keweiyi_docker_web:latest}
     build:
       context: .
       dockerfile: docker/php/Dockerfile

@@ -9,7 +9,7 @@ services:
     container_name: keweiyi_web
     restart: unless-stopped
     ports:
-      - "${KEWEIYI_WEB_PORT:-18081}:80"
+      - "${KEWEIYI_WEB_BIND:-0.0.0.0}:${KEWEIYI_WEB_PORT:-18081}:80"
     volumes:
       - ./:/var/www/html
       - ./config/db.php:/var/www/html/db.php:ro

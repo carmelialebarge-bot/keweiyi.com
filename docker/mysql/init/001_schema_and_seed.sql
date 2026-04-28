@@ -207,8 +207,19 @@ INSERT INTO `jchen_product` (`id`, `pid`, `bid`, `name`, `ename`, `title`, `etit
 ON DUPLICATE KEY UPDATE `name` = VALUES(`name`);
 
 INSERT INTO `jchen_new` (`id`, `pid`, `bid`, `title`, `etitle`, `keywords`, `ekeywords`, `description`, `edescription`, `contents`, `econtents`, `url`, `time`, `sort`) VALUES
-  (1, 2, 2, '本地开发环境已准备', 'Local Development Environment Ready', 'Docker,本地开发', 'docker,local development', 'Docker 本地开发演示新闻。', 'Docker local development demo news.', '<p>这是本地初始化新闻，用于确认新闻列表和详情页正常渲染。</p>', '<p>This demo news verifies list and detail rendering in Docker.</p>', 'local-development-ready', UNIX_TIMESTAMP(), 1)
-ON DUPLICATE KEY UPDATE `title` = VALUES(`title`);
+  (1, 2, 2, '科纬易完善医疗推车系统与精密配套件一体化供应能力', 'Keweiyi Expands Integrated Supply Capabilities for Medical Trolley Systems and Precision Parts', '医疗推车系统,精密加工零件,模具注塑,聚脲防护材料', 'medical trolley systems,precision machined parts,moulds,injection parts,polyurea protective materials', '科纬易围绕医疗设备客户需求，持续完善医疗推车系统、精密加工零件、模具注塑组件及聚脲防护材料的一体化供应能力。', 'Keweiyi continues to strengthen integrated supply capabilities for medical trolley systems, precision machined parts, moulded and injection components, and polyurea protective materials.', '<p>南京科纬易机械设备有限公司围绕医疗设备客户的实际项目需求，持续完善医疗推车系统、精密加工零件、金属模具、ABS注塑组件和聚脲防护材料的一体化供应能力。</p><p>在项目配套过程中，科纬易可根据图纸、样件、现场工况或功能要求，提供选型建议、加工配套、模具开发、注塑生产及防腐防水材料方案，帮助客户减少多环节沟通成本，提升交付效率。</p><p>公司将继续以医疗零件、机械加工和防护材料为核心方向，为设备制造、工程配套和维护改造项目提供稳定、可追溯的产品与服务支持。</p>', '<p>Nanjing Keweiyi Machinery Equipment Co., Ltd. continues to improve its integrated supply capabilities for medical equipment customers, covering medical trolley systems, precision machined parts, metal moulds, ABS injection components and polyurea protective materials.</p><p>For project support, Keweiyi can provide selection advice, machining support, mould development, injection production and anticorrosion or waterproof material solutions based on drawings, samples, site conditions or functional requirements.</p><p>The company will keep focusing on medical parts, machining and protective materials, providing stable and traceable products and services for equipment manufacturing, engineering support and maintenance projects.</p>', 'medical-trolley-precision-parts-supply', UNIX_TIMESTAMP('2026-04-24 12:10:18'), 1)
+ON DUPLICATE KEY UPDATE
+  `title` = VALUES(`title`),
+  `etitle` = VALUES(`etitle`),
+  `keywords` = VALUES(`keywords`),
+  `ekeywords` = VALUES(`ekeywords`),
+  `description` = VALUES(`description`),
+  `edescription` = VALUES(`edescription`),
+  `contents` = VALUES(`contents`),
+  `econtents` = VALUES(`econtents`),
+  `url` = VALUES(`url`),
+  `time` = VALUES(`time`),
+  `sort` = VALUES(`sort`);
 
 INSERT INTO `jchen_download` (`id`, `pid`, `bid`, `name`, `ename`, `title`, `etitle`, `keywords`, `ekeywords`, `description`, `edescription`, `contents`, `econtents`, `filename`, `url`, `time`, `sort`) VALUES
   (1, 3, 3, '演示资料', 'Demo File', '演示资料', 'Demo File', '资料', 'file', '本地演示下载资料。', 'Local demo download file.', '<p>本地演示下载内容。</p>', '<p>Local demo download content.</p>', '59aa2f76c0953.jpg', 'demo-file', UNIX_TIMESTAMP(), 1)
